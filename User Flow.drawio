@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-10T19:55:34.785Z" agent="5.0 (Windows)" etag="8QpBos2CnqGLJTRGow1q" version="14.7.7" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-06-10T20:06:10.172Z" agent="5.0 (Windows)" etag="tvCaocILg6Gx3pnvZIVA" version="14.7.7" type="github" pages="4">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Homepage">
     <mxGraphModel dx="1422" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -49,7 +49,7 @@
         <mxCell id="Q9nJDsA_fJW3AnRDlb3l-11" value="&amp;amp; asked for sign in when category is clicked" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="670" y="260" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Q9nJDsA_fJW3AnRDlb3l-13" value="Home, Quizzes, Log in, Sign up" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Q9nJDsA_fJW3AnRDlb3l-13" value="&lt;div&gt;Home, Quizzes, Log in, Sign up&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="550" y="195" width="90" height="90" as="geometry" />
         </mxCell>
         <mxCell id="Q9nJDsA_fJW3AnRDlb3l-14" value="Home, Quizzes, Dashboard, Log out" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
@@ -63,6 +63,88 @@
       <root>
         <mxCell id="hIOgUrHwcjE5-OtNcwAZ-0" />
         <mxCell id="hIOgUrHwcjE5-OtNcwAZ-1" parent="hIOgUrHwcjE5-OtNcwAZ-0" />
+        <mxCell id="kcwzooUThdPjq39lV7UK-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="hIOgUrHwcjE5-OtNcwAZ-1" source="kcwzooUThdPjq39lV7UK-0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="423" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kcwzooUThdPjq39lV7UK-0" value="Login Page" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="hIOgUrHwcjE5-OtNcwAZ-1">
+          <mxGeometry x="365" y="10" width="115" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SEQKgZ8eOhjJAlRDeCQ4-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="hIOgUrHwcjE5-OtNcwAZ-1" source="SEQKgZ8eOhjJAlRDeCQ4-0" target="SEQKgZ8eOhjJAlRDeCQ4-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="200" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SEQKgZ8eOhjJAlRDeCQ4-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="hIOgUrHwcjE5-OtNcwAZ-1" source="SEQKgZ8eOhjJAlRDeCQ4-0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="670" y="230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="670" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SEQKgZ8eOhjJAlRDeCQ4-0" value="Have an account?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="hIOgUrHwcjE5-OtNcwAZ-1">
+          <mxGeometry x="369.5" y="110" width="106" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SEQKgZ8eOhjJAlRDeCQ4-3" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="hIOgUrHwcjE5-OtNcwAZ-1">
+          <mxGeometry x="180" y="120" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SEQKgZ8eOhjJAlRDeCQ4-7" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="hIOgUrHwcjE5-OtNcwAZ-1">
+          <mxGeometry x="640" y="120" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SEQKgZ8eOhjJAlRDeCQ4-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="hIOgUrHwcjE5-OtNcwAZ-1" source="SEQKgZ8eOhjJAlRDeCQ4-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SEQKgZ8eOhjJAlRDeCQ4-8" value="Use the email and password box to sign in" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="hIOgUrHwcjE5-OtNcwAZ-1">
+          <mxGeometry x="140" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SEQKgZ8eOhjJAlRDeCQ4-10" value="Redirected to the dashboard" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="hIOgUrHwcjE5-OtNcwAZ-1">
+          <mxGeometry x="140" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SEQKgZ8eOhjJAlRDeCQ4-11" value="Use the sign up link under the email and password box to redirect to sign up page" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="hIOgUrHwcjE5-OtNcwAZ-1">
+          <mxGeometry x="610" y="230" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="dVL6oI8eCXFK_KbQZTYx" name="Sign up">
+    <mxGraphModel dx="1422" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="fQEKGr7Aeco0vmZbnP5r-0" />
+        <mxCell id="fQEKGr7Aeco0vmZbnP5r-1" parent="fQEKGr7Aeco0vmZbnP5r-0" />
+        <mxCell id="vkqgofhJNe4TgbjXL-H9-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="fQEKGr7Aeco0vmZbnP5r-1" source="vkqgofhJNe4TgbjXL-H9-0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="422.5" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vkqgofhJNe4TgbjXL-H9-0" value="&lt;div&gt;Sign up page&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="fQEKGr7Aeco0vmZbnP5r-1">
+          <mxGeometry x="365" y="10" width="115" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_p1To9iJ6giri2RzObrb-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="fQEKGr7Aeco0vmZbnP5r-1" source="vkqgofhJNe4TgbjXL-H9-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="422.5" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vkqgofhJNe4TgbjXL-H9-2" value="Will be asked for username, email, password, confirm password" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="fQEKGr7Aeco0vmZbnP5r-1">
+          <mxGeometry x="362.5" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_p1To9iJ6giri2RzObrb-1" value="Once the user clicks submit, they will be logged in and redirected to the dashboard" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="fQEKGr7Aeco0vmZbnP5r-1">
+          <mxGeometry x="365" y="270" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5ElGwZ-CKLtsnmTtR6WY" name="Dashboard">
+    <mxGraphModel dx="1422" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0K-2xL1ZvWUo3kYtJ0-Q-0" />
+        <mxCell id="0K-2xL1ZvWUo3kYtJ0-Q-1" parent="0K-2xL1ZvWUo3kYtJ0-Q-0" />
       </root>
     </mxGraphModel>
   </diagram>
