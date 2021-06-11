@@ -9,54 +9,58 @@ const schema = {
     primaryKey: true,
     autoIncrement: true,
   },
-  first_name: {
+  title: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
     validate: {
-      len: [2, 20],
+      len: [2, 50],
     },
   },
-  last_name: {
+  category: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
+
     validate: {
-      len: [2, 20],
+      len: [2, 50],
     },
   },
-  email: {
+  difficulty: {
     type: DataTypes.STRING,
     allowNull: false,
+
     validate: {
-      isEmail: true,
+      len: [2, 50],
     },
-    unique: true,
   },
-  username: {
+  type: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
+
     validate: {
-      len: [2, 20],
+      len: [2, 50],
     },
   },
-  password: {
-    type: DataTypes.STRING,
+  user_id: {
+    type: DataTypes.INTEGER,
     allowNull: false,
+    references: {
+      model: "user",
+      key: "id",
+    },
   },
 };
 
 const options = {
   sequelize,
-  modelName: "user",
+  modelName: "quiz",
   freezeTableName: true,
   timestamps: true,
   underscored: true,
 };
 
-class User extends Model {}
+class Quiz extends Model {}
 
-User.init(schema, options);
+Quiz.init(schema, options);
 
-module.exports = User;
+module.exports = Quiz;
