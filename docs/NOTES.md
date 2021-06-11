@@ -18,7 +18,7 @@
 11. Insert: Insert rating for a quiz(authenticated)
 12. Store: Store the score for a quiz (authenticated)
 13. View: AVG Score for a quiz (authenticated)
-14. Update: Add/remove quiz to/from favorites
+14. Update: Add/remove quiz to/from favorites (authenticated)
 
 ### MVP +
 
