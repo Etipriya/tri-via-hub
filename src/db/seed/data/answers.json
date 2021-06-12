@@ -1,0 +1,32 @@
+[
+  {
+    "option": ["Hydrogen", "Helium", "Oxygen", "Lithium"],
+    "correct_answer": [1, 0, 0, 0],
+    "question_id": "1"
+  },
+  {
+    "option": ["Binary", "JavaScript", "C++", "Python"],
+    "correct_answer": [1, 0, 0, 0],
+    "question_id": "2"
+  },
+  {
+    "option": ["False", "True"],
+    "correct_answer": [1, 0],
+    "question_id": "3"
+  },
+  {
+    "option": ["Iron", "Helium", "Oxygen", "Lithium"],
+    "correct_answer": [1, 0, 0, 0],
+    "question_id": "4"
+  },
+  {
+    "option": ["New Mexico", "Washington", "Colorado", "Arizona"],
+    "correct_answer": [1, 0, 0, 0],
+    "question_id": "5"
+  },
+  {
+    "option": ["8 Hours", "12 Hours", "4 Hours", "5 hours"],
+    "correct_answer": [1, 0, 0, 0],
+    "question_id": "6"
+  }
+]
