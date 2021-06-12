@@ -1,0 +1,33 @@
+{
+  "name": "tri-via-hub",
+  "version": "1.0.0",
+  "description": "A user should be able to visit the site and on the homepage they will be presented with some quiz categories (with images). Once they click on a category it will take you to the page for that category where you can view the quizzes for that category.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leon3005/tri-via-hub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leon3005/tri-via-hub/issues"
+  },
+  "homepage": "https://github.com/Leon3005/tri-via-hub#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
+}
