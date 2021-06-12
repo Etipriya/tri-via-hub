@@ -12,7 +12,6 @@ const schema = {
   first_name: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
     validate: {
       len: [2, 20],
     },
@@ -20,7 +19,6 @@ const schema = {
   last_name: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
     validate: {
       len: [2, 20],
     },
