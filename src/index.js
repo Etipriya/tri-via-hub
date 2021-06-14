@@ -9,7 +9,11 @@ const getAllQuizzes = async () => {
   const allQuizzes = await Quiz.findAll({
     include: [
       { model: User, attributes: ["username"] },
-      { model: Question, attributes: ["question", "correct_option"] },
+      {
+        model: Question,
+        attributes: ["question", "correct_option"],
+        include: { model: Answer },
+      },
     ],
   });
   const quizzes = allQuizzes.map((quiz) => quiz.get({ plain: true }));
@@ -17,16 +21,28 @@ const getAllQuizzes = async () => {
 };
 
 const getSingleQuiz = async () => {
-  await connection.sync();
+  try {
+    await connection.sync();
 
-  const id = 2;
+    const id = 2;
 
-  const quiz = await quiz.findByPk(id, {
-    include: [{ model: User, attributes: ["username"] }],
-  });
+    const singleQuiz = await Quiz.findByPk(id, {
+      include: [
+        { model: User, attributes: ["username"] },
+        {
+          model: Question,
+          attributes: ["question", "correct_option"],
+          include: { model: Answer },
+        },
+      ],
+    });
 
-  const formattedQuiz = quiz.get({ plain: true });
-  console.log(formattedQuiz);
+    const formattedQuiz = singleQuiz.get({ plain: true });
+
+    console.log(util.inspect(formattedQuiz, { depth: null }));
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 getAllQuizzes();
