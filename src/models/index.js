@@ -15,6 +15,15 @@ User.hasMany(Score, {
 Quiz.hasMany(Score, {
   foreignKey: "quiz_id",
 });
+
+Quiz.hasMany(Question, {
+  foreignKey: "quiz_id",
+});
+
+Question.belongsTo(Quiz, {
+  foreignKey: "quiz_id",
+});
+
 Question.hasMany(Answer, {
   foreignKey: "question_id",
 });
