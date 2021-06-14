@@ -15,6 +15,11 @@ const getAllQuizzes = async () => {
           attributes: ["question", "correct_option"],
           include: { model: Answer },
         },
+        {
+          model: Score,
+          attributes: ["score"],
+          include: { model: User, attributes: ["username"] },
+        },
       ],
     });
     const quizzes = allQuizzes.map((quiz) => quiz.get({ plain: true }));
@@ -118,8 +123,8 @@ const getUserQuizzes = async () => {
   }
 };
 
-// getAllQuizzes();
-getSingleQuiz();
+getAllQuizzes();
+// getSingleQuiz();
 // getQuizByCategory();
 
 // getQuestionsByQuizId();
