@@ -1,3 +1,4 @@
+const { Op } = require("sequelize");
 const util = require("util");
 
 const connection = require("./config/connection");
@@ -29,7 +30,7 @@ const getAllQuizzes = async () => {
   }
 };
 
-const getSingleQuiz = async () => {
+const getQuizById = async () => {
   try {
     await connection.sync();
 
@@ -50,6 +51,37 @@ const getSingleQuiz = async () => {
     const formattedQuiz = singleQuiz.get({ plain: true });
 
     console.log(util.inspect(formattedQuiz, { depth: null }));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const getQuizByTitle = async () => {
+  try {
+    await connection.sync();
+
+    const quizTitle = "Periodic";
+
+    const quizzes = await Quiz.findAll({
+      where: {
+        title: {
+          [Op.like]: `%${quizTitle}%`,
+        },
+      },
+      include: [
+        { model: User, attributes: ["username"] },
+        {
+          model: Question,
+          attributes: ["question", "correct_option"],
+          include: { model: Answer },
+        },
+        { model: Score, include: { model: User, attributes: ["username"] } },
+      ],
+    });
+
+    const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
+
+    console.log(util.inspect(formattedQuizzes, { depth: null }));
   } catch (error) {
     console.log(error);
   }
@@ -123,8 +155,9 @@ const getUserQuizzes = async () => {
   }
 };
 
-getAllQuizzes();
-// getSingleQuiz();
+// getAllQuizzes();
+// getQuizById();
+getQuizByTitle();
 // getQuizByCategory();
 
 // getQuestionsByQuizId();
