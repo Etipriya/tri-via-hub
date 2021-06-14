@@ -45,5 +45,35 @@ const getSingleQuiz = async () => {
   }
 };
 
-getAllQuizzes();
-getSingleQuiz();
+const getQuestionsByQuizId = async () => {
+  try {
+    await connection.sync();
+
+    const id = 1;
+
+    const questions = await Question.findAll({
+      where: {
+        quiz_id: id,
+      },
+      include: [
+        {
+          model: Quiz,
+          attributes: ["title"],
+        },
+      ],
+    });
+
+    const formattedQuestions = questions.map((question) =>
+      question.get({ plain: true })
+    );
+
+    console.log(util.inspect(formattedQuestions, { depth: null }));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// getAllQuizzes();
+// getSingleQuiz();
+
+getQuestionsByQuizId();
