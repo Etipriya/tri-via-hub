@@ -12,14 +12,9 @@ const schema = {
   option: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
     validate: {
       len: [2, 50],
     },
-  },
-  correct_answer: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
   },
 
   question_id: {

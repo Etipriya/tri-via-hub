@@ -1,26 +1,32 @@
 [
   {
     "question": "What is the first element on the periodic table?",
+    "correct_option": "Hydrogen",
     "quiz_id": "1"
   },
   {
     "question": "If you were to code software in this language you'd only be able to type 0's and 1's",
+    "correct_option": "Binary",
     "quiz_id": "3"
   },
   {
     "question": "In Team Fortress 2, the Bills Hat is a reference to the game Dota 2",
+    "correct_option": "False",
     "quiz_id": "2"
   },
   {
     "question": "Which element has the chemical symbol Fe?",
+    "correct_option": "Iron",
     "quiz_id": "1"
   },
   {
     "question": "While Apple was formed in California, in which western state was Microsoft founded?",
+    "correct_option": "New Mexico",
     "quiz_id": "2"
   },
   {
     "question": "How long are all the cutscenes from Metal Gear Solid 4 (PS3, 2008) combined?",
+    "correct_option": "8 Hours",
     "quiz_id": "3"
   }
 ]
