@@ -1,32 +1,95 @@
 [
   {
-    "option": ["Hydrogen", "Helium", "Oxygen", "Lithium"],
-    "correct_answer": [1, 0, 0, 0],
+    "option": "Hydrogen",
     "question_id": "1"
   },
   {
-    "option": ["Binary", "JavaScript", "C++", "Python"],
-    "correct_answer": [1, 0, 0, 0],
+    "option": "Helium",
+    "question_id": "1"
+  },
+
+  {
+    "option": "Oxygen",
+    "question_id": "1"
+  },
+  {
+    "option": "Lithium",
+    "question_id": "1"
+  },
+
+  {
+    "option": "Binary",
     "question_id": "2"
   },
   {
-    "option": ["False", "True"],
-    "correct_answer": [1, 0],
+    "option": "JavaScript",
+    "question_id": "2"
+  },
+  {
+    "option": "C++",
+    "question_id": "2"
+  },
+  {
+    "option": "Python",
+    "question_id": "2"
+  },
+
+  {
+    "option": "False",
+    "question_id": "3"
+  },
+
+  {
+    "option": "True",
     "question_id": "3"
   },
   {
-    "option": ["Iron", "Helium", "Oxygen", "Lithium"],
-    "correct_answer": [1, 0, 0, 0],
+    "option": "Iron",
     "question_id": "4"
   },
   {
-    "option": ["New Mexico", "Washington", "Colorado", "Arizona"],
-    "correct_answer": [1, 0, 0, 0],
+    "option": "Helium",
+    "question_id": "4"
+  },
+  {
+    "option": "Oxygen",
+    "question_id": "4"
+  },
+  {
+    "option": "Lithium",
+    "question_id": "4"
+  },
+
+  {
+    "option": "New Mexico",
     "question_id": "5"
   },
   {
-    "option": ["8 Hours", "12 Hours", "4 Hours", "5 hours"],
-    "correct_answer": [1, 0, 0, 0],
+    "option": "Washington",
+    "question_id": "5"
+  },
+  {
+    "option": "Colorado",
+    "question_id": "5"
+  },
+  {
+    "option": "Arizona",
+    "question_id": "5"
+  },
+  {
+    "option": "8 Hours",
+    "question_id": "6"
+  },
+  {
+    "option": "12 Hours",
+    "question_id": "6"
+  },
+  {
+    "option": "4 Hours",
+    "question_id": "6"
+  },
+  {
+    "option": "5 hours",
     "question_id": "6"
   }
 ]

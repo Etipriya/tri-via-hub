@@ -18,6 +18,11 @@ const schema = {
     },
   },
 
+  correct_option: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+
   quiz_id: {
     type: DataTypes.INTEGER,
     allowNull: false,

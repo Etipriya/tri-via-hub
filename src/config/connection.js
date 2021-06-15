@@ -1,13 +1,14 @@
+require("dotenv").config();
 const sequelize = require("sequelize");
 const dbOptions = {
-  host: process.env.DB_HOST,
+  host: "localhost",
   dialect: "mysql",
-  port: process.env.DB_PORT,
+  port: "3306",
   logging: false,
 };
-const dbName = process.env.DB_NAME;
-const dbUser = process.env.DB_USER;
-const dbPassword = process.env.DB_PASSWORD;
+const dbName = "tri_via_hub";
+const dbUser = "root";
+const dbPassword = "password";
 let connection;
 if (process.env.JAWSDB_URL) {
   // connection for heroku
