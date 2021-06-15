@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../", "public")));
-//app.use(routes);
+app.use(routes);
 
 const init = async () => {
   try {
