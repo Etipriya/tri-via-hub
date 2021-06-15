@@ -27,4 +27,28 @@ const getAllQuizzes = async (req, res) => {
   }
 };
 
-module.exports = { getAllQuizzes };
+const getQuizById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const singleQuiz = await Quiz.findByPk(id, {
+      include: [
+        { model: User, attributes: ["username"] },
+        {
+          model: Question,
+          attributes: ["question", "correct_option"],
+          include: { model: Answer },
+        },
+        { model: Score, include: { model: User, attributes: ["username"] } },
+      ],
+    });
+
+    const formattedQuiz = singleQuiz.get({ plain: true });
+
+    res.status(200).json(formattedQuiz);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+module.exports = { getAllQuizzes, getQuizById };
