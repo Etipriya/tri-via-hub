@@ -1,0 +1,30 @@
+const { Op } = require("sequelize");
+
+const { User, Quiz, Question, Answer, Score } = require("../../models");
+
+const getAllQuizzes = async (req, res) => {
+  try {
+    const allQuizzes = await Quiz.findAll({
+      include: [
+        { model: User, attributes: ["username"] },
+        {
+          model: Question,
+          attributes: ["question", "correct_option"],
+          include: { model: Answer },
+        },
+        {
+          model: Score,
+          attributes: ["score"],
+          include: { model: User, attributes: ["username"] },
+        },
+      ],
+    });
+    const quizzes = allQuizzes.map((quiz) => quiz.get({ plain: true }));
+
+    res.status(200).json(quizzes);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+module.exports = { getAllQuizzes };
