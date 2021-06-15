@@ -53,12 +53,23 @@ const getQuizById = async (req, res) => {
 
 const getQuizByTitle = async (req, res) => {
   try {
-    const { title } = req.params;
+    const { title, category } = req.query;
+
+    let searchTerm;
+    let columnName;
+
+    if (title) {
+      searchTerm = title;
+      columnName = "title";
+    } else {
+      searchTerm = category;
+      columnName = "category";
+    }
 
     const quizzes = await Quiz.findAll({
       where: {
-        title: {
-          [Op.like]: `%${title}%`,
+        [columnName]: {
+          [Op.like]: `%${searchTerm}%`,
         },
       },
       include: [
@@ -80,4 +91,28 @@ const getQuizByTitle = async (req, res) => {
   }
 };
 
-module.exports = { getAllQuizzes, getQuizById, getQuizByTitle };
+const getQuizByCategory = async () => {
+  try {
+    await connection.sync();
+
+    const category = "Entertainment: Video Games";
+
+    const quizzes = await Quiz.findAll({
+      where: {
+        category,
+      },
+    });
+
+    const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
+
+    console.log(formattedQuizzes);
+  } catch (error) {
+    console.log(error);
+  }
+};
+module.exports = {
+  getAllQuizzes,
+  getQuizById,
+  getQuizByTitle,
+  getQuizByCategory,
+};
