@@ -51,4 +51,33 @@ const getQuizById = async (req, res) => {
   }
 };
 
-module.exports = { getAllQuizzes, getQuizById };
+const getQuizByTitle = async (req, res) => {
+  try {
+    const { title } = req.params;
+
+    const quizzes = await Quiz.findAll({
+      where: {
+        title: {
+          [Op.like]: `%${title}%`,
+        },
+      },
+      include: [
+        { model: User, attributes: ["username"] },
+        {
+          model: Question,
+          attributes: ["question", "correct_option"],
+          include: { model: Answer },
+        },
+        { model: Score, include: { model: User, attributes: ["username"] } },
+      ],
+    });
+
+    const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
+
+    res.status(200).json(formattedQuizzes);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+module.exports = { getAllQuizzes, getQuizById, getQuizByTitle };

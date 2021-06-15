@@ -1,10 +1,15 @@
 const { Router } = require("express");
 
-const { getAllQuizzes, getQuizById } = require("../../controllers/api/quiz");
+const {
+  getAllQuizzes,
+  getQuizById,
+  getQuizByTitle,
+} = require("../../controllers/api/quiz");
 
 const router = Router();
 
-router.use("/:id", getQuizById);
-router.use("/", getAllQuizzes);
+router.get("/:id", getQuizById);
+router.get("/search/:title", getQuizByTitle);
+router.get("/", getAllQuizzes);
 
 module.exports = router;
