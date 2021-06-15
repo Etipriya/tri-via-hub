@@ -1,11 +1,19 @@
 const { Router } = require("express");
 
-const router = Router();
+const {
+  renderDashboardPage,
+  renderMainQuizPage,
+  renderQuizPageById,
+  renderCreateQuizPage,
+} = require("../../controllers/view/privateRender");
 
-const renderSignupPage = require("renderSignUpPage");
-const renderLoginPage = require("renderLoginPage");
-const renderDashboardPage = require("renderDashboardPage");
-const { route } = require("..");
+const {
+  renderSignupPage,
+  renderLoginPage,
+  renderHomePage,
+} = require("../../controllers/view/publicRender");
+
+const router = Router();
 
 //public
 router.get("/sign-up", renderSignupPage);
