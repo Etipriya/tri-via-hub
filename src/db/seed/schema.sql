@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS   tri-via-hub;
+DROP DATABASE IF EXISTS tri_via_hub;
 
-CREATE DATABASE tri-via-hub;
+CREATE DATABASE tri_via_hub;
 

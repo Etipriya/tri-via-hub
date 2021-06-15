@@ -7,7 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "seed": "node src/db/seed/index.js"
+    "seed": "node src/db/seed/seed.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.2",
