@@ -5,7 +5,9 @@ const path = require("path");
 
 const sequelize = require("./config/connection");
 
-const PORT = process.env.PORT || 3000;
+const router = require("./routes");
+
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -13,7 +15,7 @@ app.use(cors());
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../", "public")));
-//app.use(routes);
+app.use(router);
 
 const init = async () => {
   try {
