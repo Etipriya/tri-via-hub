@@ -2,7 +2,7 @@ const { Op } = require("sequelize");
 const util = require("util");
 
 const connection = require("./config/connection");
-const { User, Quiz, Question, Answer, Score } = require("./models");
+const { User, Quiz, Question, Answer, Score, Favourite } = require("./models");
 
 const getAllQuizzes = async () => {
   try {
@@ -155,11 +155,37 @@ const getUserQuizzes = async () => {
   }
 };
 
+const getUserFavourites = async () => {
+  try {
+    await connection.sync();
+
+    const id = 2;
+
+    const singleUser = await User.findByPk(id, {
+      include: [
+        {
+          model: Favourite,
+          attributes: ["fav_quiz_id"],
+          include: { model: Quiz, attributes: ["title", "category"] },
+        },
+      ],
+    });
+
+    const formattedUser = singleUser.get({ plain: true });
+
+    console.log(util.inspect(formattedUser, { depth: null }));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // getAllQuizzes();
 // getQuizById();
-getQuizByTitle();
+// getQuizByTitle();
 // getQuizByCategory();
 
 // getQuestionsByQuizId();
 
 // getUserQuizzes();
+
+getUserFavourites();

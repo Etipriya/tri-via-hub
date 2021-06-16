@@ -10,16 +10,6 @@ const schema = {
     autoIncrement: true,
   },
 
-  score: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-
-  date_time: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
-
   user_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -29,7 +19,7 @@ const schema = {
     },
   },
 
-  quiz_id: {
+  fav_quiz_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
@@ -41,14 +31,14 @@ const schema = {
 
 const options = {
   sequelize,
-  modelName: "score",
+  modelName: "favourite",
   freezeTableName: true,
   timestamps: true,
   underscored: true,
 };
 
-class Score extends Model {}
+class Favourite extends Model {}
 
-Score.init(schema, options);
+Favourite.init(schema, options);
 
-module.exports = Score;
+module.exports = Favourite;
