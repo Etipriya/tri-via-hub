@@ -37,8 +37,8 @@ const options = {
   underscored: true,
 };
 
-class Score extends Model {}
+class Favourite extends Model {}
 
-Score.init(schema, options);
+Favourite.init(schema, options);
 
-module.exports = Score;
+module.exports = Favourite;

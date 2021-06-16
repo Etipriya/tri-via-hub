@@ -1,11 +1,19 @@
 require("dotenv").config();
 const sequelize = require("../../config/connection");
-const { User, Quiz, Question, Answer, Score } = require("../../models");
+const {
+  User,
+  Quiz,
+  Question,
+  Answer,
+  Score,
+  Favourite,
+} = require("../../models");
 const users = require("./data/users.json");
 const quizzes = require("./data/quizzes.json");
 const questions = require("./data/questions.json");
 const answers = require("./data/answers.json");
 const scores = require("./data/scores.json");
+const favourites = require("./data/favourites.json");
 
 const seed = async () => {
   await sequelize.sync({ force: true });
@@ -24,6 +32,9 @@ const seed = async () => {
 
   await Score.bulkCreate(scores);
   console.log("Successfully seeded scores");
+
+  await Favourite.bulkCreate(favourites);
+  console.log("Successfully seeded favourites");
 
   process.exit(0);
 };
