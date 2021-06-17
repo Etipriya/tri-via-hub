@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-17T17:46:24.362Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="QSlJ_IajzMqc3Q-38BIe" version="14.7.8" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-06-17T17:49:09.018Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="a44E6ZYJYpuZ_7l9RsDk" version="14.7.8" type="github" pages="6">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Homepage">
     <mxGraphModel dx="1298" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -146,19 +146,45 @@
         <mxCell id="0K-2xL1ZvWUo3kYtJ0-Q-0" />
         <mxCell id="0K-2xL1ZvWUo3kYtJ0-Q-1" parent="0K-2xL1ZvWUo3kYtJ0-Q-0" />
         <mxCell id="XuEjst6-ACEy1KIJZzYL-1" value="View Created Quizzes" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0K-2xL1ZvWUo3kYtJ0-Q-1">
-          <mxGeometry x="170" y="180" width="120" height="60" as="geometry" />
+          <mxGeometry x="220" y="180" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XuEjst6-ACEy1KIJZzYL-2" value="View Played Quizzes" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0K-2xL1ZvWUo3kYtJ0-Q-1">
-          <mxGeometry x="450" y="180" width="120" height="60" as="geometry" />
+          <mxGeometry x="440" y="180" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XuEjst6-ACEy1KIJZzYL-3" value="Select a Quiz" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0K-2xL1ZvWUo3kYtJ0-Q-1">
-          <mxGeometry x="330" y="320" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="XuEjst6-ACEy1KIJZzYL-4" value="Play a Quiz" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0K-2xL1ZvWUo3kYtJ0-Q-1">
-          <mxGeometry x="340" y="390" width="120" height="60" as="geometry" />
+          <mxGeometry x="350" y="290" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XuEjst6-ACEy1KIJZzYL-5" value="Play a Quiz" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0K-2xL1ZvWUo3kYtJ0-Q-1">
           <mxGeometry x="340" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="bpBm8FM0QqTds5J4aeBB" name="Quiz Page">
+    <mxGraphModel dx="1298" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="lcRDx06UGFkLJV9WvmC5-0" />
+        <mxCell id="lcRDx06UGFkLJV9WvmC5-1" parent="lcRDx06UGFkLJV9WvmC5-0" />
+        <mxCell id="-iy03vPcK_KrlRfw5zDB-0" value="Play a Quiz" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lcRDx06UGFkLJV9WvmC5-1">
+          <mxGeometry x="220" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-iy03vPcK_KrlRfw5zDB-1" value="View a Quiz" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lcRDx06UGFkLJV9WvmC5-1">
+          <mxGeometry x="220" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-iy03vPcK_KrlRfw5zDB-2" value="Delete a Quiz" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lcRDx06UGFkLJV9WvmC5-1">
+          <mxGeometry x="220" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-iy03vPcK_KrlRfw5zDB-3" value="Add a Quiz to favourites" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lcRDx06UGFkLJV9WvmC5-1">
+          <mxGeometry x="220" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-iy03vPcK_KrlRfw5zDB-4" value="Go to the Dashboard" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lcRDx06UGFkLJV9WvmC5-1">
+          <mxGeometry x="400" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-iy03vPcK_KrlRfw5zDB-5" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lcRDx06UGFkLJV9WvmC5-1" source="-iy03vPcK_KrlRfw5zDB-2" target="-iy03vPcK_KrlRfw5zDB-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="350" as="sourcePoint" />
+            <mxPoint x="440" y="300" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
