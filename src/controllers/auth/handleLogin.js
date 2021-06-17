@@ -1,18 +1,24 @@
 const { User } = require("../../models");
 
+const validateEmail = (email) => {
+  const re =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+};
+
 const handleLogin = async (req, res) => {
   try {
     const { usernameEmail, password } = req.body;
 
+    const constructWhere = () => {
+      if (validateEmail(usernameEmail)) {
+        return { email: usernameEmail };
+      }
+      return { username: usernameEmail };
+    };
+
     const user = await User.findOne({
-      $or: [
-        {
-          username: usernameEmail,
-        },
-        {
-          email: usernameEmail,
-        },
-      ],
+      where: constructWhere(),
     });
 
     console.log(password);
