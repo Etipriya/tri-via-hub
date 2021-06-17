@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-17T17:50:48.956Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="L6YsItoAEICgbK2zUjv4" version="14.7.8" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2021-06-17T17:57:09.193Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="BKL-tdBOKbvT99Je6sRb" version="14.7.8" type="github" pages="7">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Homepage">
     <mxGraphModel dx="1298" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -166,24 +166,57 @@
         <mxCell id="lcRDx06UGFkLJV9WvmC5-0" />
         <mxCell id="lcRDx06UGFkLJV9WvmC5-1" parent="lcRDx06UGFkLJV9WvmC5-0" />
         <mxCell id="-iy03vPcK_KrlRfw5zDB-0" value="Play a Quiz" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lcRDx06UGFkLJV9WvmC5-1">
-          <mxGeometry x="220" y="160" width="120" height="60" as="geometry" />
+          <mxGeometry x="230" y="190" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="-iy03vPcK_KrlRfw5zDB-1" value="View a Quiz" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lcRDx06UGFkLJV9WvmC5-1">
-          <mxGeometry x="220" y="80" width="120" height="60" as="geometry" />
+          <mxGeometry x="430" y="40" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="-iy03vPcK_KrlRfw5zDB-2" value="Delete a Quiz" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lcRDx06UGFkLJV9WvmC5-1">
-          <mxGeometry x="220" y="240" width="120" height="60" as="geometry" />
+          <mxGeometry x="430" y="190" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="-iy03vPcK_KrlRfw5zDB-3" value="Add a Quiz to favourites" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lcRDx06UGFkLJV9WvmC5-1">
-          <mxGeometry x="220" y="320" width="120" height="60" as="geometry" />
+          <mxGeometry x="580" y="190" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="-iy03vPcK_KrlRfw5zDB-4" value="Go to the Dashboard" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lcRDx06UGFkLJV9WvmC5-1">
-          <mxGeometry x="400" y="240" width="120" height="60" as="geometry" />
+          <mxGeometry x="430" y="300" width="150" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="-iy03vPcK_KrlRfw5zDB-5" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lcRDx06UGFkLJV9WvmC5-1" source="-iy03vPcK_KrlRfw5zDB-2" target="-iy03vPcK_KrlRfw5zDB-4">
+        <mxCell id="-iy03vPcK_KrlRfw5zDB-5" value="" style="endArrow=classic;html=1;exitX=0.583;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="lcRDx06UGFkLJV9WvmC5-1" source="-iy03vPcK_KrlRfw5zDB-2" target="-iy03vPcK_KrlRfw5zDB-4">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="390" y="350" as="sourcePoint" />
             <mxPoint x="440" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPzfYzBcULYF9Jz8fa9T-0" value="View Returned quizzes from the Search in the Search Page" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lcRDx06UGFkLJV9WvmC5-1">
+          <mxGeometry x="120" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xPzfYzBcULYF9Jz8fa9T-1" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lcRDx06UGFkLJV9WvmC5-1" source="xPzfYzBcULYF9Jz8fa9T-0" target="-iy03vPcK_KrlRfw5zDB-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="330" as="sourcePoint" />
+            <mxPoint x="440" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPzfYzBcULYF9Jz8fa9T-6" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="lcRDx06UGFkLJV9WvmC5-1" source="-iy03vPcK_KrlRfw5zDB-1" target="-iy03vPcK_KrlRfw5zDB-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="330" as="sourcePoint" />
+            <mxPoint x="440" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPzfYzBcULYF9Jz8fa9T-9" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;html=1;" edge="1" parent="lcRDx06UGFkLJV9WvmC5-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="101" as="sourcePoint" />
+            <mxPoint x="640" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="570" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPzfYzBcULYF9Jz8fa9T-10" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;html=1;entryX=0.592;entryY=-0.033;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="lcRDx06UGFkLJV9WvmC5-1" source="-iy03vPcK_KrlRfw5zDB-1" target="-iy03vPcK_KrlRfw5zDB-0">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="425" y="70" as="sourcePoint" />
+            <mxPoint x="515" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="360" y="120" />
+            </Array>
           </mxGeometry>
         </mxCell>
       </root>
@@ -517,7 +550,7 @@
       <root>
         <mxCell id="KIercQpX43Uq3CQZ37sd-0" />
         <mxCell id="KIercQpX43Uq3CQZ37sd-1" parent="KIercQpX43Uq3CQZ37sd-0" />
-        <mxCell id="KIercQpX43Uq3CQZ37sd-2" value="Search a quiz by Name" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="KIercQpX43Uq3CQZ37sd-1">
+        <mxCell id="KIercQpX43Uq3CQZ37sd-2" value="Search a quiz by Name, Category" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="KIercQpX43Uq3CQZ37sd-1">
           <mxGeometry x="350" y="200" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KIercQpX43Uq3CQZ37sd-3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="KIercQpX43Uq3CQZ37sd-1" source="KIercQpX43Uq3CQZ37sd-2">
