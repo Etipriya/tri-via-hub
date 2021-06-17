@@ -76,7 +76,12 @@ const options = {
   underscored: true,
 };
 
-class User extends Model {}
+class User extends Model {
+  async checkPassword(loginPassword) {
+    const isCorrect = await bcrypt.compare(loginPassword, this.password);
+    return isCorrect;
+  }
+}
 
 User.init(schema, options);
 
