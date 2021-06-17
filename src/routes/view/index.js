@@ -21,8 +21,8 @@ router.get("/login", renderLoginPage);
 //private
 router.get("/dashboard", renderDashboardPage);
 router.get("/quiz", renderMainQuizPage);
-router.get("/quiz/:id", renderQuizPageById);
 router.get("/quiz/create", renderCreateQuizPage);
+router.get("/quiz/:id", renderQuizPageById);
 
 router.get("/*", renderHomePage);
 
