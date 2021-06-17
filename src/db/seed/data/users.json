@@ -12,5 +12,12 @@
     "email": "alicegreen@gmail.com",
     "username": "alicegreen",
     "password": "password456"
+  },
+  {
+    "first_name": "tim",
+    "last_name": "bird",
+    "email": "timbird@gmail.com",
+    "username": "timbird",
+    "password": "password789"
   }
 ]

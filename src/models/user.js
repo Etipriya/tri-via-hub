@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require("sequelize");
-
 const bcrypt = require("bcrypt");
 
 const sequelize = require("../config/connection");
@@ -51,7 +50,6 @@ const hooks = {
   beforeCreate: async (newUser) => {
     newUser.password = await bcrypt.hash(newUser.password, 10);
   },
-
   beforeBulkCreate: async (users) => {
     const promises = users.map((user) => {
       return bcrypt.hash(user.password, 10);
@@ -79,6 +77,7 @@ const options = {
 class User extends Model {
   async checkPassword(loginPassword) {
     const isCorrect = await bcrypt.compare(loginPassword, this.password);
+    console.log(isCorrect);
     return isCorrect;
   }
 }

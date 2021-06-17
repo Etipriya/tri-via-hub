@@ -1,3 +1,5 @@
+const { User } = require("../../models");
+
 const handleLogin = async (req, res) => {
   try {
     const { usernameEmail, password } = req.body;
@@ -13,12 +15,16 @@ const handleLogin = async (req, res) => {
       ],
     });
 
+    console.log(password);
+
+    const validPassword = await user.checkPassword(password);
+
     if (!user) {
       console.log("User does not exist!!!!!");
       return res.status(401).json({ error: "Failed to login" });
     }
 
-    if (user.password !== password) {
+    if (!validPassword) {
       console.log("Incorrect password");
       return res.status(401).json({ error: "Failed to login" });
     }
