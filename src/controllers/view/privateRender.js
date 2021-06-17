@@ -1,16 +1,14 @@
-
-
 const renderDashboardPage = (req, res) => {
-  res.send("Dashboard Page");
+  res.render("dashboard");
 };
 const renderMainQuizPage = (req, res) => {
-  res.send("Main quiz page");
-};
-const renderQuizPageById = (req, res) => {
-  res.send("Quiz page by ID");
+  res.render("quizzes");
 };
 const renderCreateQuizPage = (req, res) => {
-  res.send("Create quiz page");
+  res.render("create-quiz");
+};
+const renderQuizPageById = (req, res) => {
+  res.render("individual-quiz");
 };
 
 module.exports = {
