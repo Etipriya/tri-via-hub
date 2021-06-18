@@ -12,11 +12,6 @@ const handleSignup = async (req, res) => {
       password,
     });
 
-    if (!first_name || !last_name || !username || !email || !password) {
-      console.log("Please complete all fields!");
-      return res.status(401).json({ error: "All fields must be completed" });
-    }
-
     // req.session.save(() => {
     //   (req.session.isLoggedIn = true),
     //     (req.session.userId = newUser.id),
