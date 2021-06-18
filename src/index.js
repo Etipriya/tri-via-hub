@@ -5,15 +5,13 @@ const path = require("path");
 const handlebars = require("express-handlebars");
 
 const sequelize = require("./config/connection");
-
-const router = require("./routes");
+const routes = require("./routes");
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
 const handlebarsOptions = {};
-
 const hbs = handlebars.create(handlebarsOptions);
 
 app.engine("handlebars", hbs.engine);
@@ -23,7 +21,7 @@ app.use(cors());
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../", "public")));
-app.use(router);
+app.use(routes);
 
 const init = async () => {
   try {
