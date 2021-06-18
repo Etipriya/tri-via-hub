@@ -1,1 +1,28 @@
-<h1>Login to your account</h1>
+<div
+  class="loginForm position-absolute top-50 start-50 translate-middle text-center w-25"
+>
+  <form id="loginForm">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="usernameEmail"
+        placeholder="name@example.com"
+      />
+      <label for="usernameEmail">Username/Email Address</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Password"
+      />
+      <label for="password">Password</label>
+    </div>
+    <div class="col-auto mt-4">
+      <button type="submit" class="btn btn-primary mb-3 w-25">Login</button>
+    </div>
+  </form>
+  <a href="#">Don't have an account? Sign up here!</a>
+</div>

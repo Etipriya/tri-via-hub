@@ -1,3 +1,30 @@
+const handleLogin = async (event) => {
+  event.preventDefault();
+
+  const usernameEmail = $("#usernameEmail").val();
+  const password = $("#password").val();
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    body: JSON.stringify({
+      usernameEmail,
+      password,
+    }),
+  };
+
+  const response = await fetch("/auth/login", options);
+
+  if (response.status !== 200) {
+    console.log("Failed to login! Please check your username and password.");
+  } else {
+    window.location.replace("/dashboard");
+  }
+};
+
 const handleSignup = async (event) => {
   event.preventDefault();
 
@@ -38,4 +65,5 @@ const handleSignup = async (event) => {
   }
 };
 
+$("#loginForm").submit(handleLogin);
 $("#signupForm").submit(handleSignup);
