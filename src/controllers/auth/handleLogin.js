@@ -40,7 +40,7 @@ const handleLogin = async (req, res) => {
         (req.session.username = user.username),
         (req.session.email = user.email),
         (req.session.userId = user.id),
-        res.status(200).json({ message: "success" });
+        res.status(200).json({ message: "Successfully logged in!" });
     });
   } catch (err) {
     console.error(err);
