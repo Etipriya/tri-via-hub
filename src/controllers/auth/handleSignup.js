@@ -12,12 +12,15 @@ const handleSignup = async (req, res) => {
       password,
     });
 
-    // req.session.save(() => {
-    //   (req.session.isLoggedIn = true),
-    //     (req.session.userId = newUser.id),
-    //     (req.session.username = newUser.username),
-    // });
-    res.status(201).json({ success: "User has been created!" });
+    req.session.save(() => {
+      (req.session.isLoggedIn = true),
+        (req.session.email = newUser.email),
+        (req.session.username = newUser.username),
+        (req.session.userId = newUser.id),
+        res.status(201).json({ success: "User has been created!" });
+    });
+
+    console.log(req.session.isLoggedIn);
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Failed to create user" });
