@@ -21,8 +21,6 @@ const handleLogin = async (req, res) => {
       where: constructWhere(),
     });
 
-    console.log(password);
-
     const validPassword = await user.checkPassword(password);
 
     if (!user) {
