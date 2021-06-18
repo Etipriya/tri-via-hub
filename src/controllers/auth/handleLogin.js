@@ -33,7 +33,13 @@ const handleLogin = async (req, res) => {
       return res.status(401).json({ error: "Failed to login" });
     }
 
-    return res.status(200).json({ message: "success" });
+    req.session.save(() => {
+      (req.session.isLoggedIn = true),
+        (req.session.username = user.username),
+        (req.session.email = user.email),
+        (req.session.userId = user.id),
+        res.status(200).json({ message: "success" });
+    });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: "Failed to login" });

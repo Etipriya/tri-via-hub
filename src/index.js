@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const handlebars = require("express-handlebars");
+const session = require("express-session");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const sequelize = require("./config/connection");
 const routes = require("./routes");
@@ -13,10 +15,19 @@ const app = express();
 
 const handlebarsOptions = {};
 const hbs = handlebars.create(handlebarsOptions);
-
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
+const sessionOptions = {
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
+
+app.use(session(sessionOptions));
 app.use(cors());
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
