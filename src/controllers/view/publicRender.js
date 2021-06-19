@@ -7,7 +7,8 @@ const renderLoginPage = (req, res) => {
 };
 
 const renderHomePage = (req, res) => {
-  res.render("home-page");
+  const { isLoggedIn } = req.session;
+  res.render("home-page", { isLoggedIn });
 };
 
 module.exports = { renderSignupPage, renderLoginPage, renderHomePage };
