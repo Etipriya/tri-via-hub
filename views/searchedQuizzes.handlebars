@@ -1,0 +1,9 @@
+  {{> private-navbar}}
+  
+  <main>
+  <div class="d-flex flex-wrap justify-content-evenly m-5">
+    {{#each formattedQuizzes as |quiz|}}
+    {{> quiz-search-card}}
+    {{/each}}
+  </div>
+  </main>
