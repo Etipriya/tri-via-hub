@@ -1,21 +1,16 @@
 const { Router } = require("express");
 
-const publicViews = require("./publicViews");
+const authenticate = require("../../middleware/authenticate");
 
-const {
-  renderDashboardPage,
-  renderMainQuizPage,
-  renderQuizPageById,
-  renderCreateQuizPage,
-} = require("../../controllers/view/privateRender");
+const publicViews = require("./publicViews");
+const privateViews = require("./privateViews");
+const { renderHomePage } = require("../../controllers/view/publicRender");
 
 const router = Router();
 
 router.use(publicViews);
-//private
-router.get("/dashboard", renderDashboardPage);
-router.get("/quiz", renderMainQuizPage);
-router.get("/quiz/create", renderCreateQuizPage);
-router.get("/quiz/:id", renderQuizPageById);
+router.use(authenticate, privateViews);
+
+router.get("/*", renderHomePage);
 
 module.exports = router;
