@@ -3,11 +3,9 @@ const { Router } = require("express");
 const quizRoutes = require("./quizRoutes");
 const userRoutes = require("./userRoutes");
 
-const authenticate = require("../../middleware/authenticate");
-
 const router = Router();
 
-router.use("/quiz", authenticate, quizRoutes);
-router.use("/user", authenticate, userRoutes);
+router.use("/quiz", quizRoutes);
+router.use("/user", userRoutes);
 
 module.exports = router;
