@@ -5,6 +5,7 @@ const { Quiz, User } = require("../../models");
 const renderDashboardPage = (req, res) => {
   res.render("dashboard");
 };
+
 const renderMainQuizPage = async (req, res) => {
   try {
     const allQuizzes = await Quiz.findAll({
@@ -14,7 +15,7 @@ const renderMainQuizPage = async (req, res) => {
       order: [["createdAt", "DESC"]],
     });
     // Getting a plain version of the JSON data (just data we inputted)
-    let formattedQuizzes = allQuizzes
+    const formattedQuizzes = allQuizzes
       .map((quiz) => quiz.get({ plain: true }))
       .slice(0, 8);
 
@@ -23,6 +24,7 @@ const renderMainQuizPage = async (req, res) => {
     console.error(err);
   }
 };
+
 const renderCreateQuizPage = (req, res) => {
   res.render("create-quiz");
 };
@@ -56,7 +58,7 @@ const renderSearchedQuizzes = async (req, res) => {
 
     const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
 
-    res.render("searchedQuizzes", { formattedQuizzes });
+    res.render("quizzes", { formattedQuizzes });
   } catch (err) {
     console.error(err);
   }
