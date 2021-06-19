@@ -4,8 +4,9 @@ const {
   getAllQuizzes,
   getQuizById,
   getQuizByTitle,
-  createQuiz,
-} = require("../../controllers/api/quiz");
+} = require("../../controllers/api/getQuiz");
+
+const { createQuiz } = require("../../controllers/api/postQuiz");
 
 const router = Router();
 
