@@ -97,9 +97,9 @@ const createQuizQuestion = async (event) => {
     );
   };
 
-  answersArray.map((each) => createAnswerOption(each));
-
   const response = await fetch("/api/quiz/create/question", questionOptions);
+
+  answersArray.map((each) => createAnswerOption(each));
 
   if (response.status !== 201) {
     console.log("Failed to create quiz!");
@@ -108,6 +108,13 @@ const createQuizQuestion = async (event) => {
   }
 };
 
+const finishCreateQuiz = (event) => {
+  event.preventDefault();
+
+  window.location.replace(`/quiz`);
+};
+
 $("#quizSearch").submit(handleQuizSearch);
 $("#create-quiz-form").submit(createQuizBase);
 $("#questionForm").submit(createQuizQuestion);
+$("#doneCreate").click(finishCreateQuiz);
