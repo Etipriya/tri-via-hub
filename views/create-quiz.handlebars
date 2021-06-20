@@ -1,6 +1,8 @@
 {{> private-navbar}} 
 
+
+<div class="d-flex flex-wrap justify-content-evenly m-5">
 {{#each generatedQuizQuestions as |quiz|}}
     {{> api-question-card}}
     {{/each}}
-
+</div>
