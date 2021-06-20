@@ -1,0 +1,18 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h3 class="card-title">Question: {{question}}</h3>
+
+    <h5 class="card-category">Category: {{category}}</h5>
+    <p class="card-difficulty">{{difficulty}}</p>
+    <h4 class="card-correct-answer">Correct Answer: {{correct_answer}}</h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{incorrect_answers.[0]}}
+    <li class="list-group-item">{{incorrect_answers.[1]}}
+    <li class="list-group-item">{{incorrect_answers.[2]}}
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Add Question</a>
+
+  </div>
+</div>

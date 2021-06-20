@@ -2,6 +2,7 @@ const { Op } = require("sequelize");
 const { getApiQuestions } = require("../../controllers/api/getQuiz");
 
 const { Quiz, User } = require("../../models");
+const axios = require("axios");
 
 const renderDashboardPage = (req, res) => {
   res.render("dashboard");
@@ -27,10 +28,16 @@ const renderMainQuizPage = async (req, res) => {
 };
 
 const renderCreateQuizPage = async (req, res) => {
-  const apiQuestions = await getApiQuestions();
-  console.log(apiQuestions);
+  // const apiQuestions = await getApiQuestions();
+  const response = await axios.get(
+    "https://opentdb.com/api.php?amount=10&category=25"
+  );
+  const { data } = response;
+  const generatedQuizQuestions = data.results;
 
-  res.render("create-quiz", { apiQuestions });
+  console.log(generatedQuizQuestions);
+
+  res.render("create-quiz", { generatedQuizQuestions });
 };
 const renderQuizPageById = (req, res) => {
   res.render("individual-quiz");
