@@ -40,6 +40,7 @@ const renderCreateQuizPage = async (req, res) => {
 
   res.render("create-quiz", { generatedQuizQuestions });
 };
+
 const renderQuizPageById = (req, res) => {
   res.render("individual-quiz");
 };

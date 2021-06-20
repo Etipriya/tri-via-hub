@@ -1,13 +1,13 @@
 {{> private-navbar}} 
 
 <div class="position-absolute top-50 start-50 translate-middle text-center w-50">
-<form id="quiz-form">
+<form id="create-quiz-form">
   <div class="form-group mb-3">
-    <label for="exampleFormControlInput1">Enter quiz Title</label>
+    <label for="quiz-title">Enter Quiz Title</label>
     <input type="text" class="form-control" id="quiz-title" placeholder="Quiz Title">
   </div>
   <div class="form-group mb-3">
-    <label for="exampleFormControlSelect1">Select a Category</label>
+    <label for="category-select">Select a Category</label>
     <select class="form-control" id="category-select">
       <option id="general-knowledge" value="9">General Knowledge</option>
       <option id="entertainment-books" value="10">Entertainment: Books</option>
@@ -38,16 +38,16 @@
   <div class="form-group mb-3">
     <label for="difficulty-select">Select Difficulty</label>
     <select  class="form-control" id="difficulty-select">
-      <option id="easy">Easy</option>
-      <option id="medium">Medium</option>
-      <option id="hard">Hard</option>
+      <option id="easy" value="easy">Easy</option>
+      <option id="medium" value="medium">Medium</option>
+      <option id="hard" value="hard">Hard</option>
     </select>
   </div>
     <div class="form-group mb-3">
     <label for="type-select">Select Type</label>
     <select class="form-control" id="type-select">
-      <option id="multiple">Multiple</option>
-      <option id="boolean">Boolean</option>
+      <option id="multiple" value="multiple">Multiple</option>
+      <option id="boolean" value="boolean">Boolean</option>
 
     </select>
   </div>
