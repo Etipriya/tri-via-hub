@@ -1,4 +1,5 @@
 const { Op } = require("sequelize");
+const { getApiQuestions } = require("../../controllers/api/getQuiz");
 
 const { Quiz, User } = require("../../models");
 
@@ -25,8 +26,11 @@ const renderMainQuizPage = async (req, res) => {
   }
 };
 
-const renderCreateQuizPage = (req, res) => {
-  res.render("create-quiz");
+const renderCreateQuizPage = async (req, res) => {
+  const apiQuestions = await getApiQuestions();
+  console.log(apiQuestions);
+
+  res.render("create-quiz", { apiQuestions });
 };
 const renderQuizPageById = (req, res) => {
   res.render("individual-quiz");
