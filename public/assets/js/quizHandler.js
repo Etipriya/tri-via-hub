@@ -50,7 +50,7 @@ const createQuizBase = async (event) => {
   if (response.status !== 201) {
     console.log("Failed to create quiz!");
   } else {
-    window.location.replace(`/quiz/search?title=${title}`);
+    window.location.replace(`/quiz/create/question`);
   }
 };
 

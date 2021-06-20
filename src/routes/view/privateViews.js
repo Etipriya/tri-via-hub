@@ -5,6 +5,7 @@ const {
   renderMainQuizPage,
   renderQuizPageById,
   renderCreateQuizPage,
+  renderCreateQuestionPage,
   renderSearchedQuizzes,
 } = require("../../controllers/view/privateRender");
 
@@ -16,6 +17,7 @@ router.get("/quiz", renderMainQuizPage);
 // router.get("/trivia-quizzes", renderDashboardPage);
 router.get("/quiz/search", renderSearchedQuizzes);
 router.get("/quiz/create", renderCreateQuizPage);
+router.get("/quiz/create/question", renderCreateQuestionPage);
 router.get("/quiz/:id", renderQuizPageById);
 
 module.exports = router;

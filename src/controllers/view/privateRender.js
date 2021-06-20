@@ -41,6 +41,10 @@ const renderCreateQuizPage = async (req, res) => {
   res.render("create-quiz", { generatedQuizQuestions });
 };
 
+const renderCreateQuestionPage = async (req, res) => {
+  res.render("create-quiz-questions");
+};
+
 const renderQuizPageById = (req, res) => {
   res.render("individual-quiz");
 };
@@ -85,5 +89,6 @@ module.exports = {
   renderMainQuizPage,
   renderQuizPageById,
   renderCreateQuizPage,
+  renderCreateQuestionPage,
   renderSearchedQuizzes,
 };
