@@ -34,6 +34,10 @@ Question.hasMany(Answer, {
   foreignKey: "question_id",
 });
 
+Category.hasMany(Quiz, {
+  foreignKey: "category_id",
+});
+
 Question.belongsTo(Quiz, {
   foreignKey: "quiz_id",
 });
