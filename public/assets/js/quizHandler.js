@@ -54,5 +54,36 @@ const createQuizBase = async (event) => {
   }
 };
 
+const createQuizQuestion = async (event) => {
+  event.preventDefault();
+
+  const question = $("#question").val();
+  const correct_option = $("#correct-option").val();
+  const option2 = $("#option2").val();
+  const option3 = $("#option3").val();
+  const option4 = $("#option4").val();
+
+  const questionOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    body: JSON.stringify({
+      question,
+      correct_option,
+    }),
+  };
+
+  const response = await fetch("/api/quiz/create/question", questionOptions);
+
+  if (response.status !== 201) {
+    console.log("Failed to create quiz!");
+  } else {
+    window.location.replace(`/quiz/create/question`);
+  }
+};
+
 $("#quizSearch").submit(handleQuizSearch);
 $("#create-quiz-form").submit(createQuizBase);
+$("#questionForm").submit(createQuizQuestion);
