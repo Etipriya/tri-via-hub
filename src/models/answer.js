@@ -12,9 +12,6 @@ const schema = {
   option: {
     type: DataTypes.STRING,
     allowNull: false,
-    validate: {
-      len: [2, 50],
-    },
   },
 
   question_id: {

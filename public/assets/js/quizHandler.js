@@ -63,6 +63,10 @@ const createQuizQuestion = async (event) => {
   const option3 = $("#option3").val();
   const option4 = $("#option4").val();
 
+  const answersArray = [];
+
+  answersArray.push(correct_option, option2, option3, option4);
+
   const questionOptions = {
     method: "POST",
     headers: {
@@ -74,6 +78,26 @@ const createQuizQuestion = async (event) => {
       correct_option,
     }),
   };
+
+  const createAnswerOption = async (option) => {
+    const answersOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      body: JSON.stringify({
+        option,
+      }),
+    };
+
+    const response = await fetch(
+      "/api/quiz/create/question/answer",
+      answersOptions
+    );
+  };
+
+  answersArray.map((each) => createAnswerOption(each));
 
   const response = await fetch("/api/quiz/create/question", questionOptions);
 
