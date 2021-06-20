@@ -29,4 +29,5 @@ const createQuizBase = async (event) => {
   const title = $("#quiz-title").val();
   const category = $();
 };
+
 $("#quizSearch").submit(handleQuizSearch);

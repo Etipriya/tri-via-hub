@@ -1,6 +1,13 @@
 const { Op } = require("sequelize");
 
-const { User, Quiz, Question, Answer, Score } = require("../../models");
+const {
+  User,
+  Quiz,
+  Question,
+  Answer,
+  Score,
+  Category,
+} = require("../../models");
 
 const axios = require("axios");
 
@@ -11,6 +18,7 @@ const getAllQuizzes = async (req, res) => {
       include: [
         // In the JSON it returns it will include username of the creator of the quiz
         { model: User, attributes: ["username"] },
+        { model: Category, attributes: ["category_name"] },
         // Questions in the quiz with the correct option and other answers
         {
           model: Question,
@@ -42,6 +50,7 @@ const getQuizById = async (req, res) => {
     const singleQuiz = await Quiz.findByPk(id, {
       include: [
         { model: User, attributes: ["username"] },
+        { model: Category, attributes: ["category_name"] },
         {
           model: Question,
           attributes: ["question", "correct_option"],
@@ -64,7 +73,7 @@ const getQuizByTitle = async (req, res) => {
   try {
     // req.query will look like this in the URL: ?title=Video
     // It allows us to search for either title or category
-    const { title, category } = req.query;
+    const { title, category_id } = req.query;
 
     let searchTerm;
     let columnName;
@@ -75,8 +84,8 @@ const getQuizByTitle = async (req, res) => {
       searchTerm = title;
       columnName = "title";
     } else {
-      searchTerm = category;
-      columnName = "category";
+      searchTerm = category_id;
+      columnName = "category_id";
     }
 
     const quizzes = await Quiz.findAll({
@@ -88,6 +97,7 @@ const getQuizByTitle = async (req, res) => {
       },
       include: [
         { model: User, attributes: ["username"] },
+        { model: Category, attributes: ["category_name"] },
         {
           model: Question,
           attributes: ["question", "correct_option"],

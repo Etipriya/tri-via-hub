@@ -1,8 +1,7 @@
 const { Op } = require("sequelize");
-const { getApiQuestions } = require("../../controllers/api/getQuiz");
-
-const { Quiz, User } = require("../../models");
 const axios = require("axios");
+
+const { Quiz, User, Category } = require("../../models");
 
 const renderDashboardPage = (req, res) => {
   res.render("dashboard");
@@ -11,9 +10,11 @@ const renderDashboardPage = (req, res) => {
 const renderMainQuizPage = async (req, res) => {
   try {
     const allQuizzes = await Quiz.findAll({
-      include:
+      include: [
         // In the JSON it returns it will include username of the creator of the quiz
         { model: User, attributes: ["username"] },
+        { model: Category, attributes: ["category_name"] },
+      ],
       order: [["createdAt", "DESC"]],
     });
     // Getting a plain version of the JSON data (just data we inputted)
@@ -45,7 +46,7 @@ const renderQuizPageById = (req, res) => {
 
 const renderSearchedQuizzes = async (req, res) => {
   try {
-    const { title, category } = req.query;
+    const { title, category_id } = req.query;
 
     let searchTerm;
     let columnName;
@@ -54,8 +55,8 @@ const renderSearchedQuizzes = async (req, res) => {
       searchTerm = title;
       columnName = "title";
     } else {
-      searchTerm = category;
-      columnName = "category";
+      searchTerm = category_id;
+      columnName = "category_id";
     }
 
     const quizzes = await Quiz.findAll({
@@ -64,7 +65,10 @@ const renderSearchedQuizzes = async (req, res) => {
           [Op.like]: `%${searchTerm}%`,
         },
       },
-      include: [{ model: User, attributes: ["username"] }],
+      include: [
+        { model: User, attributes: ["username"] },
+        { model: Category, attributes: ["category_name"] },
+      ],
     });
 
     const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
