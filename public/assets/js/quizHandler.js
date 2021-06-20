@@ -23,4 +23,10 @@ const handleQuizSearch = async (event) => {
   }
 };
 
+const createQuizBase = async (event) => {
+  event.preventDefault();
+
+  const title = $("#quiz-title").val();
+  const category = $();
+};
 $("#quizSearch").submit(handleQuizSearch);
