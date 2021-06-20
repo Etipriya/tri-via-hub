@@ -1,21 +1,21 @@
 [
   {
     "title": "Periodic Table Quiz",
-    "category": "Science & Nature",
+    "category_id": "16",
     "difficulty": "easy",
     "type": "multiple",
     "user_id": "1"
   },
   {
     "title": "Video Games",
-    "category": "Entertainment: Video Games",
+    "category_id": "14",
     "difficulty": "medium",
     "type": "boolean",
     "user_id": "2"
   },
   {
     "title": "Computer Science",
-    "category": "Science: Computers",
+    "category_id": "17",
     "difficulty": "hard",
     "type": "multiple",
     "user_id": "2"
