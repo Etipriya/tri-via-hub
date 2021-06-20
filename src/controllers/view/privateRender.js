@@ -29,6 +29,10 @@ const renderMainQuizPage = async (req, res) => {
 };
 
 const renderCreateQuizPage = async (req, res) => {
+  res.render("create-quiz");
+};
+
+const renderCreateQuestionPage = async (req, res) => {
   // const apiQuestions = await getApiQuestions();
   const response = await axios.get(
     "https://opentdb.com/api.php?amount=10&category=25"
@@ -37,12 +41,7 @@ const renderCreateQuizPage = async (req, res) => {
   const generatedQuizQuestions = data.results;
 
   console.log(generatedQuizQuestions);
-
-  res.render("create-quiz", { generatedQuizQuestions });
-};
-
-const renderCreateQuestionPage = async (req, res) => {
-  res.render("create-quiz-questions");
+  res.render("create-quiz-questions", { generatedQuizQuestions });
 };
 
 const renderQuizPageById = (req, res) => {
