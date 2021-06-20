@@ -14,7 +14,6 @@ const router = Router();
 //private
 router.get("/dashboard", renderDashboardPage);
 router.get("/quiz", renderMainQuizPage);
-// router.get("/trivia-quizzes", renderDashboardPage);
 router.get("/quiz/search", renderSearchedQuizzes);
 router.get("/quiz/create", renderCreateQuizPage);
 router.get("/quiz/create/question", renderCreateQuestionPage);
