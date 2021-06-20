@@ -17,12 +17,12 @@ const schema = {
       len: [2, 50],
     },
   },
-  category: {
-    type: DataTypes.STRING,
+  category_id: {
+    type: DataTypes.INTEGER,
     allowNull: false,
-
-    validate: {
-      len: [2, 50],
+    references: {
+      model: "category",
+      key: "api_id",
     },
   },
   difficulty: {

@@ -7,6 +7,7 @@ const {
   Answer,
   Score,
   Favourite,
+  Category,
 } = require("../../models");
 const users = require("./data/users.json");
 const quizzes = require("./data/quizzes.json");
@@ -14,12 +15,16 @@ const questions = require("./data/questions.json");
 const answers = require("./data/answers.json");
 const scores = require("./data/scores.json");
 const favourites = require("./data/favourites.json");
+const categories = require("./data/categories.json");
 
 const seed = async () => {
   await sequelize.sync({ force: true });
 
   await User.bulkCreate(users);
   console.log("Successfully seeded users");
+
+  await Category.bulkCreate(categories);
+  console.log("Successfully seeded categories");
 
   await Quiz.bulkCreate(quizzes);
   console.log("Successfully seeded quizzes");
