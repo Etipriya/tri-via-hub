@@ -134,8 +134,20 @@ const viewQuiz = async (event) => {
   }
 };
 
+const generateQuiz = () => {
+  const title = $("#quiz-title").val();
+  const category_id = $("#category-select").val();
+  const difficulty = $("#difficulty-select").val();
+  const type = $("#type-select").val();
+
+  window.location.replace(
+    `/quiz/generate?title=${title}&category=${category_id}&difficulty=${difficulty}&type=${type}`
+  );
+};
+
 $(".view-quiz").click(viewQuiz);
 $("#quizSearch").submit(handleQuizSearch);
-$("#create-quiz-form").submit(createQuizBase);
+$("#create-btn").click(createQuizBase);
+$("#generate-btn").click(generateQuiz);
 $("#questionForm").submit(createQuizQuestion);
 $("#doneCreate").click(finishCreateQuiz);

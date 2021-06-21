@@ -134,22 +134,9 @@ const getQuizByTitle = async (req, res) => {
 //     console.log(error);
 //   }
 // };
-const getApiQuestions = async () => {
-  try {
-    const response = await axios.get(
-      "https://opentdb.com/api.php?amount=10&category=25"
-    );
-    const { data } = response;
-    const generatedQuizQuestions = data.results;
 
-    return generatedQuizQuestions;
-  } catch (error) {
-    throw error;
-  }
-};
 module.exports = {
   getAllQuizzes,
   getQuizById,
   getQuizByTitle,
-  getApiQuestions,
 };

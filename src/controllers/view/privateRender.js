@@ -1,7 +1,8 @@
-const { Op } = require("sequelize");
+const { Op, json } = require("sequelize");
 const axios = require("axios");
+const getApiQuestions = require("../../fetchers/open-trivia");
 
-const { Quiz, User, Category } = require("../../models");
+const { Quiz, User, Category, Question, Answer } = require("../../models");
 
 const renderDashboardPage = (req, res) => {
   res.render("dashboard");
@@ -44,7 +45,6 @@ const renderCreateQuestionPage = async (req, res) => {
   res.render("create-quiz-questions", { generatedQuizQuestions });
 };
 
-
 const renderQuizPageById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -67,7 +67,6 @@ const renderQuizPageById = async (req, res) => {
   } catch (error) {
     console.log(error.message);
   }
-
 };
 
 const renderSearchedQuizzes = async (req, res) => {
@@ -104,6 +103,47 @@ const renderSearchedQuizzes = async (req, res) => {
     console.error(err);
   }
 };
+const renderGenerateQuiz = async (req, res) => {
+  try {
+    const { title, category, difficulty, type } = req.query;
+    const { userId } = req.session;
+    const params = { category, difficulty, type, amount: 10 };
+    const apiQuestions = await getApiQuestions(params);
+
+    const quiz = await Quiz.create({
+      title,
+      category_id: category,
+      difficulty,
+      type,
+      user_id: userId,
+    });
+
+    const questions = apiQuestions.map((question) => {
+      return {
+        question: question.question,
+        correct_option: question.correct_answer,
+        quiz_id: quiz.id,
+      };
+    });
+
+    const dbQuestions = await Question.bulkCreate(questions);
+
+    const answers = apiQuestions.map((question, index) => {
+      return {
+        option: JSON.stringify([
+          ...question.incorrect_answers,
+          question.correct_answer,
+        ]),
+        question_id: dbQuestions[index].id,
+      };
+    });
+
+    await Answer.bulkCreate(answers);
+    res.redirect("/quiz");
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 module.exports = {
   renderDashboardPage,
@@ -112,4 +152,5 @@ module.exports = {
   renderCreateQuizPage,
   renderCreateQuestionPage,
   renderSearchedQuizzes,
+  renderGenerateQuiz,
 };
