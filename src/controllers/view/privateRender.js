@@ -44,8 +44,30 @@ const renderCreateQuestionPage = async (req, res) => {
   res.render("create-quiz-questions", { generatedQuizQuestions });
 };
 
-const renderQuizPageById = (req, res) => {
-  res.render("individual-quiz");
+
+const renderQuizPageById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const getQuiz = await Quiz.findByPk(id, {
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+        {
+          model: Category,
+        },
+      ],
+    });
+
+    const formattedQuiz = getQuiz.get({ plain: true });
+
+    res.render("individual-quiz", { formattedQuiz });
+  } catch (error) {
+    console.log(error.message);
+  }
+
 };
 
 const renderSearchedQuizzes = async (req, res) => {

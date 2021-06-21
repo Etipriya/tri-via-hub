@@ -1,3 +1,9 @@
 {{> private-navbar}} 
 
-<h1>Each individual quiz is perfect in it's individuality </h1>
+<div class="card m-3 p-3 view-quiz" style="width: 18rem" id="{{id}}">
+  <h5 class="card-title mb-5">{{formattedQuiz.title}}</h5>
+  <p>Category: {{formattedQuiz.category.category_name}}</p>
+  <p>Difficulty: {{formattedQuiz.difficulty}}</p>
+  <p>Type: {{formattedQuiz.type}}</p>
+  <p>Created by: {{formattedQuiz.user.username}}</p>
+</div>

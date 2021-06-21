@@ -114,6 +114,27 @@ const finishCreateQuiz = (event) => {
   window.location.replace(`/quiz`);
 };
 
+const viewQuiz = async (event) => {
+  const id = event.currentTarget.id;
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    params: JSON.stringify({
+      id,
+    }),
+  };
+  const response = await fetch(`/api/quiz/${id}`, options);
+  if (response.status !== 200) {
+    console.log("Failed to get quiz");
+  } else {
+    window.location.replace(`/quiz/${id}`);
+  }
+};
+
+$(".view-quiz").click(viewQuiz);
 $("#quizSearch").submit(handleQuizSearch);
 $("#create-quiz-form").submit(createQuizBase);
 $("#questionForm").submit(createQuizQuestion);
