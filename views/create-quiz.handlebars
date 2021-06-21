@@ -1,7 +1,7 @@
 {{> private-navbar}} 
 
 <div class="position-absolute top-50 start-50 translate-middle text-center w-50">
-<form id="create-quiz-form">
+<div id="create-quiz-form">
   <div class="form-group mb-3">
     <label for="quiz-title">Enter Quiz Title</label>
     <input type="text" class="form-control" id="quiz-title" placeholder="Quiz Title">
@@ -52,9 +52,8 @@
     </select>
   </div>
   <div class="col-auto mt-4">
-      <button type="button" class="btn btn-success mb-3 w-25">Generate Questions</button>
-      <button type="submit" class="btn btn-primary mb-3 w-25">Create Questions</button>
-
-    </div>
-</form>
+    <button type="button" class="btn btn-success mb-3 w-25" id="generate-btn">Generate Questions</button>
+    <button type="button" class="btn btn-primary mb-3 w-25" id="create-btn">Create Questions</button>
+  </div>
+</div>
 </div>

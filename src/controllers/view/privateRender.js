@@ -1,5 +1,6 @@
 const { Op } = require("sequelize");
 const axios = require("axios");
+const getApiQuestions = require("../../fetchers/open-trivia");
 
 const { Quiz, User, Category } = require("../../models");
 
@@ -44,7 +45,6 @@ const renderCreateQuestionPage = async (req, res) => {
   res.render("create-quiz-questions", { generatedQuizQuestions });
 };
 
-
 const renderQuizPageById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -67,7 +67,6 @@ const renderQuizPageById = async (req, res) => {
   } catch (error) {
     console.log(error.message);
   }
-
 };
 
 const renderSearchedQuizzes = async (req, res) => {
@@ -104,6 +103,15 @@ const renderSearchedQuizzes = async (req, res) => {
     console.error(err);
   }
 };
+const renderGenerateQuiz = async (req, res) => {
+  try {
+    const { title, category, difficulty, type } = req.query;
+    const params = { category, difficulty, type, amount: 10 };
+    const apiQuestions = await getApiQuestions(params);
+    console.log(apiQuestions);
+    res.send("Generate Quiz");
+  } catch (error) {}
+};
 
 module.exports = {
   renderDashboardPage,
@@ -112,4 +120,5 @@ module.exports = {
   renderCreateQuizPage,
   renderCreateQuestionPage,
   renderSearchedQuizzes,
+  renderGenerateQuiz,
 };
