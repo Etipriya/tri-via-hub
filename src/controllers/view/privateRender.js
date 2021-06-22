@@ -4,8 +4,25 @@ const getApiQuestions = require("../../fetchers/open-trivia");
 
 const { Quiz, User, Category, Question, Answer } = require("../../models");
 
-const renderDashboardPage = (req, res) => {
-  res.render("dashboard");
+const renderDashboardPage = async (req, res) => {
+  try {
+    const { userId } = req.session;
+    const quizzes = await Quiz.findAll({
+      where: {
+        user_id: userId,
+      },
+      include: [
+        {
+          model: Category,
+          attributes: ["category_name"],
+        },
+      ],
+    });
+    const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
+    res.render("dashboard", { formattedQuizzes });
+  } catch (error) {
+    console.log(error, "Not working");
+  }
 };
 
 const renderMainQuizPage = async (req, res) => {
