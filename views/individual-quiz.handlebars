@@ -1,9 +1,12 @@
 {{> private-navbar}} 
 
 <div class="card m-3 p-3 view-quiz" style="width: 18rem" id="{{id}}">
-  <h5 class="card-title mb-5">{{formattedQuiz.title}}</h5>
-  <p>Category: {{formattedQuiz.category.category_name}}</p>
-  <p>Difficulty: {{formattedQuiz.difficulty}}</p>
-  <p>Type: {{formattedQuiz.type}}</p>
-  <p>Created by: {{formattedQuiz.user.username}}</p>
+  {{#each questions as |question|}}
+    <div>{{question.question}}</div>
+    <ul>
+      {{#each question.answers as |answer|}}
+        <li>{{answer}}</li>
+      {{/each}}
+    </ul>
+  {{/each}}
 </div>

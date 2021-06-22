@@ -128,6 +128,7 @@ const viewQuiz = async (event) => {
   if (response.status !== 200) {
     console.log("Failed to get quiz");
   } else {
+    console.log(response)
     window.location.replace(`/quiz/${id}`);
   }
 };
