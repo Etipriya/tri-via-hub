@@ -67,6 +67,8 @@ const createQuizQuestion = async (event) => {
 
   answersArray.push(correct_option, option2, option3, option4);
 
+  console.log(answersArray);
+
   const questionOptions = {
     method: "POST",
     headers: {
@@ -79,27 +81,23 @@ const createQuizQuestion = async (event) => {
     }),
   };
 
-  const createAnswerOption = async (option) => {
-    const answersOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      body: JSON.stringify({
-        option,
-      }),
-    };
-
-    const response = await fetch(
-      "/api/quiz/create/question/answer",
-      answersOptions
-    );
-  };
-
   const response = await fetch("/api/quiz/create/question", questionOptions);
 
-  answersArray.map((each) => createAnswerOption(each));
+  const answersOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    body: JSON.stringify({
+      option: JSON.stringify(answersArray),
+    }),
+  };
+
+  const answerResponse = await fetch(
+    "/api/quiz/create/question/answer",
+    answersOptions
+  );
 
   if (response.status !== 201) {
     console.log("Failed to create quiz!");
