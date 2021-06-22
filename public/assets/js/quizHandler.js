@@ -132,6 +132,10 @@ const viewQuiz = async (event) => {
   }
 };
 
+const deleteQuiz = () => {
+  console.log("delete");
+};
+
 const generateQuiz = () => {
   const title = $("#quiz-title").val();
   const category_id = $("#category-select").val();
@@ -143,7 +147,8 @@ const generateQuiz = () => {
   );
 };
 
-$(".view-quiz").click(viewQuiz);
+$("[name='delete-btn']").click(deleteQuiz);
+$(".title").click(viewQuiz);
 $("#quizSearch").submit(handleQuizSearch);
 $("#create-btn").click(createQuizBase);
 $("#generate-btn").click(generateQuiz);
