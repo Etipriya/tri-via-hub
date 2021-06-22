@@ -128,8 +128,13 @@ const viewQuiz = async (event) => {
   if (response.status !== 200) {
     console.log("Failed to get quiz");
   } else {
+    console.log(response)
     window.location.replace(`/quiz/${id}`);
   }
+};
+
+const deleteQuiz = () => {
+  console.log("delete");
 };
 
 const generateQuiz = () => {
@@ -143,7 +148,8 @@ const generateQuiz = () => {
   );
 };
 
-$(".view-quiz").click(viewQuiz);
+$("[name='delete-btn']").click(deleteQuiz);
+$(".title").click(viewQuiz);
 $("#quizSearch").submit(handleQuizSearch);
 $("#create-btn").click(createQuizBase);
 $("#generate-btn").click(generateQuiz);

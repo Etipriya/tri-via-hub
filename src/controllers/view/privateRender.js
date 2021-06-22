@@ -2,10 +2,34 @@ const { Op, json } = require("sequelize");
 const axios = require("axios");
 const getApiQuestions = require("../../fetchers/open-trivia");
 
-const { Quiz, User, Category, Question, Answer } = require("../../models");
+const {
+  Quiz,
+  User,
+  Category,
+  Question,
+  Answer,
+  Score,
+} = require("../../models");
 
-const renderDashboardPage = (req, res) => {
-  res.render("dashboard");
+const renderDashboardPage = async (req, res) => {
+  try {
+    const { userId } = req.session;
+    const quizzes = await Quiz.findAll({
+      where: {
+        user_id: userId,
+      },
+      include: [
+        {
+          model: Category,
+          attributes: ["category_name"],
+        },
+      ],
+    });
+    const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
+    res.render("dashboard", { formattedQuizzes });
+  } catch (error) {
+    console.log(error, "Not working");
+  }
 };
 
 const renderMainQuizPage = async (req, res) => {
@@ -37,25 +61,59 @@ const renderCreateQuestionPage = async (req, res) => {
   res.render("create-quiz-questions");
 };
 
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+};
+
 const renderQuizPageById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const getQuiz = await Quiz.findByPk(id, {
+    const quiz = await Quiz.findByPk(id, {
       include: [
+        { model: User, attributes: ["username"] },
+        { model: Category, attributes: ["category_name"] },
         {
-          model: User,
-          attributes: ["username"],
+          model: Question,
+          attributes: ["question", "correct_option"],
+          include: { model: Answer },
         },
-        {
-          model: Category,
-        },
+        { model: Score, include: { model: User, attributes: ["username"] } },
       ],
     });
 
-    const formattedQuiz = getQuiz.get({ plain: true });
+    // console.log(quiz)
 
-    res.render("individual-quiz", { formattedQuiz });
+    const plainQuiz = quiz.get({ plain: true });
+
+    const questions = plainQuiz.questions.map((question) => {
+      const { answers } = question;
+
+      const { option } = answers[0];
+
+      const options = JSON.parse(option);
+
+      const shuffledAnswers = shuffleArray(options);
+
+      question.answers = shuffledAnswers;
+
+      return question;
+    });
+
+    const x = {
+      ...plainQuiz,
+      questions,
+    };
+
+    console.log("x", JSON.stringify(x, null, 2));
+
+    res.render("individual-quiz", x);
   } catch (error) {
     console.log(error.message);
   }
