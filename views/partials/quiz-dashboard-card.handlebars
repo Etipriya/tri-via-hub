@@ -1,6 +1,12 @@
-<div class="card m-3 p-3 view-quiz" style="width: 18rem" id="{{id}}">
-  <h5 class="card-title mb-5">{{title}}</h5>
+<div class="card m-3 p-3 view-quiz" style="width: 18rem">
+  <h5 class="card-title mb-5 title" id="{{id}}">{{title}}</h5>
   <p>Category: {{category.category_name}}</p>
   <p>Difficulty: {{difficulty}}</p>
   <p>Type: {{type}}</p>
+  <button
+    type="button"
+    id="{{id}}"
+    name="delete-btn"
+    class="btn btn-danger"
+  >Delete</button>
 </div>
