@@ -2,7 +2,14 @@ const { Op, json } = require("sequelize");
 const axios = require("axios");
 const getApiQuestions = require("../../fetchers/open-trivia");
 
-const { Quiz, User, Category, Question, Answer, Score } = require("../../models");
+const {
+  Quiz,
+  User,
+  Category,
+  Question,
+  Answer,
+  Score,
+} = require("../../models");
 
 const renderDashboardPage = (req, res) => {
   res.render("dashboard");
@@ -37,6 +44,16 @@ const renderCreateQuestionPage = async (req, res) => {
   res.render("create-quiz-questions");
 };
 
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+};
+
 const renderQuizPageById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -54,13 +71,32 @@ const renderQuizPageById = async (req, res) => {
       ],
     });
 
-    const formattedQuiz = quiz.get({ plain: true });
+    // console.log(quiz)
 
-    
-    // const parsedQuiz = JSON.parse(quiz)
-    console.log("formattedQuiz", formattedQuiz)
+    const plainQuiz = quiz.get({ plain: true });
 
-    res.render("individual-quiz", { formattedQuiz });
+    const questions = plainQuiz.questions.map((question) => {
+      const { answers } = question;
+
+      const { option } = answers[0];
+
+      const options = JSON.parse(option);
+
+      const shuffledAnswers = shuffleArray(options);
+
+      question.answers = shuffledAnswers;
+
+      return question;
+    });
+
+    const x = {
+      ...plainQuiz,
+      questions,
+    };
+
+    console.log("x", JSON.stringify(x, null, 2));
+
+    res.render("individual-quiz", x);
   } catch (error) {
     console.log(error.message);
   }

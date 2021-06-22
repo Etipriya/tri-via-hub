@@ -59,7 +59,16 @@ const options = {
   underscored: true,
 };
 
-class Quiz extends Model {}
+// will go in util function
+
+class Quiz extends Model {
+  parseAnswers() {
+    return {
+      ...this,
+      questions,
+    };
+  }
+}
 
 Quiz.init(schema, options);
 
