@@ -47,7 +47,7 @@ const getQuizById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const singleQuiz = await Quiz.findByPk(id, {
+    const quiz = await Quiz.findByPk(id, {
       include: [
         { model: User, attributes: ["username"] },
         { model: Category, attributes: ["category_name"] },
@@ -59,8 +59,9 @@ const getQuizById = async (req, res) => {
         { model: Score, include: { model: User, attributes: ["username"] } },
       ],
     });
+  
+            const formattedQuiz = quiz.get({ plain: true });
 
-    const formattedQuiz = singleQuiz.get({ plain: true });
 
     res.status(200).json(formattedQuiz);
   } catch (err) {

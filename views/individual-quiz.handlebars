@@ -6,4 +6,12 @@
   <p>Difficulty: {{formattedQuiz.difficulty}}</p>
   <p>Type: {{formattedQuiz.type}}</p>
   <p>Created by: {{formattedQuiz.user.username}}</p>
+  <p>{{formattedQuiz.ques}}</p>
+
+  {{#each formattedQuiz.questions}}
+  {{question}}
+  {{#each answers}}
+  {{this}}
+  {{/each}}
+  {{/each}}
 </div>

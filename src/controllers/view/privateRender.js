@@ -2,7 +2,7 @@ const { Op, json } = require("sequelize");
 const axios = require("axios");
 const getApiQuestions = require("../../fetchers/open-trivia");
 
-const { Quiz, User, Category, Question, Answer } = require("../../models");
+const { Quiz, User, Category, Question, Answer, Score } = require("../../models");
 
 const renderDashboardPage = (req, res) => {
   res.render("dashboard");
@@ -41,19 +41,24 @@ const renderQuizPageById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const getQuiz = await Quiz.findByPk(id, {
+    const quiz = await Quiz.findByPk(id, {
       include: [
+        { model: User, attributes: ["username"] },
+        { model: Category, attributes: ["category_name"] },
         {
-          model: User,
-          attributes: ["username"],
+          model: Question,
+          attributes: ["question", "correct_option"],
+          include: { model: Answer },
         },
-        {
-          model: Category,
-        },
+        { model: Score, include: { model: User, attributes: ["username"] } },
       ],
     });
 
-    const formattedQuiz = getQuiz.get({ plain: true });
+    const formattedQuiz = quiz.get({ plain: true });
+
+    
+    // const parsedQuiz = JSON.parse(quiz)
+    console.log("formattedQuiz", formattedQuiz)
 
     res.render("individual-quiz", { formattedQuiz });
   } catch (error) {
