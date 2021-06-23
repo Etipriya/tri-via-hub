@@ -122,7 +122,7 @@ const renderQuizPageById = async (req, res) => {
 
     console.log("x", JSON.stringify(x, null, 2));
 
-    res.render("individual-quiz", x);
+    res.render("individual-quiz", x, { layout: "quiz" });
   } catch (error) {
     console.log(error.message);
   }
