@@ -1,5 +1,4 @@
-const { Op, json } = require("sequelize");
-const axios = require("axios");
+const { Op } = require("sequelize");
 const getApiQuestions = require("../../fetchers/open-trivia");
 
 const {
@@ -96,13 +95,23 @@ const renderQuizPageById = async (req, res) => {
     const questions = plainQuiz.questions.map((question) => {
       const { answers } = question;
 
-      const { option } = answers[0];
+      const newQuestion = question.question;
+
+      let { option } = answers[0];
+
+      option = option.replace(/&#039;/g, "'");
 
       const options = JSON.parse(option);
 
       const shuffledAnswers = shuffleArray(options);
 
+      const formattedQuestion = newQuestion
+        .replace(/&#039;/g, "'")
+        .replace(/&quot;/g, "'")
+        .replace(/&rsquo;/g, "'");
+
       question.answers = shuffledAnswers;
+      question.question = formattedQuestion;
 
       return question;
     });

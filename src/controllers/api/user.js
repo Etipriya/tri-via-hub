@@ -1,11 +1,4 @@
-const {
-  User,
-  Quiz,
-  Question,
-  Answer,
-  Score,
-  Favourite,
-} = require("../../models");
+const { User, Quiz, Favourite } = require("../../models");
 
 const getUserFavourites = async (req, res) => {
   try {

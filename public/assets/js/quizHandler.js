@@ -139,10 +139,9 @@ const generateQuiz = () => {
   const title = $("#quiz-title").val();
   const category_id = $("#category-select").val();
   const difficulty = $("#difficulty-select").val();
-  const type = $("#type-select").val();
 
   window.location.replace(
-    `/quiz/generate?title=${title}&category=${category_id}&difficulty=${difficulty}&type=${type}`
+    `/quiz/generate?title=${title}&category=${category_id}&difficulty=${difficulty}`
   );
 };
 
