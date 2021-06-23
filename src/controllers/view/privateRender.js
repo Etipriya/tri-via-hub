@@ -95,13 +95,21 @@ const renderQuizPageById = async (req, res) => {
     const questions = plainQuiz.questions.map((question) => {
       const { answers } = question;
 
+      const newQuestion = question.question;
+
       const { option } = answers[0];
 
       const options = JSON.parse(option);
 
       const shuffledAnswers = shuffleArray(options);
 
+      const formattedQuestion = newQuestion
+        .replace(/&#039;/g, "'")
+        .replace(/&quot;/g, "'")
+        .replace(/&rsquo;/g, "'");
+
       question.answers = shuffledAnswers;
+      question.question = formattedQuestion;
 
       return question;
     });
