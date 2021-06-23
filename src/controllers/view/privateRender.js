@@ -97,7 +97,9 @@ const renderQuizPageById = async (req, res) => {
 
       const newQuestion = question.question;
 
-      const { option } = answers[0];
+      let { option } = answers[0];
+
+      option = option.replace(/&#039;/g, "'");
 
       const options = JSON.parse(option);
 
