@@ -1,8 +1,8 @@
 const isAnswer = async (event) => {
-  event.preventDefault();
+  const button = $(event.target);
+  const question = $(event.currentTarget);
 
-  const givenAnswer = event.target.getAttribute("data-answer");
-  const questionID = event.currentTarget.id;
+  const givenAnswer = button.attr("data-answer");
 
   const options = {
     method: "POST",
@@ -11,19 +11,33 @@ const isAnswer = async (event) => {
     },
     redirect: "follow",
     body: JSON.stringify({
-      id: questionID,
+      id: question.attr("id"),
       givenAnswer,
     }),
   };
 
   const response = await fetch("/api/quiz/check-answer", options);
 
-  const data = await response.json();
+  const { success } = await response.json();
 
   if (response.status !== 200) {
     console.log("Failed to get answer");
   } else {
-    console.log(data);
+    console.log(success);
+
+    if (success) {
+      question.find("ul").replaceWith(
+        `<div class="alert alert-success" role="alert">
+          Correct
+        </div>`
+      );
+    } else {
+      question.find("ul").replaceWith(
+        `<div class="alert alert-danger" role="alert">
+          Incorrect
+        </div>`
+      );
+    }
   }
 };
 

@@ -4,11 +4,11 @@
   {{#each questions as |question|}}
     <div class="question" id={{question.id}}>
       <div >{{question.question}}</div>
-    <ul>
-      {{#each question.answers as |answer|}}
-        <button class="btn btn-success answer-btn" data-answer={{answer}}>{{answer}}</button>
-      {{/each}}
-    </ul>
+      <ul class="list-group">
+        {{#each question.answers as |answer|}}
+          <li class="list-group-item" data-answer={{answer}}>{{answer}}</li>
+        {{/each}}
+      </ul>
     </div>
   {{/each}}
 </div>

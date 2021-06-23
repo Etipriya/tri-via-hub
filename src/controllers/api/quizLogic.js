@@ -6,13 +6,9 @@ const checkAnswer = async (req, res) => {
 
     const question = await Question.findByPk(id);
 
-    if (givenAnswer === question.correct_option) {
-      console.log("success");
-      return res.status(200).json({ success: "That was correct!" });
-    } else {
-      console.log("fail");
-      return res.status(200).json({ error: "That answer was incorrect!" });
-    }
+    return res
+      .status(200)
+      .json({ success: givenAnswer === question.correct_option });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: "Failed to create find quiz" });
