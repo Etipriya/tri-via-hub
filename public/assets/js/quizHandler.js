@@ -110,27 +110,6 @@ const finishCreateQuiz = (event) => {
   window.location.replace(`/quiz`);
 };
 
-const viewQuiz = async (event) => {
-  const id = event.currentTarget.id;
-  const options = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    redirect: "follow",
-    params: JSON.stringify({
-      id,
-    }),
-  };
-  const response = await fetch(`/api/quiz/${id}`, options);
-  if (response.status !== 200) {
-    console.log("Failed to get quiz");
-  } else {
-    console.log(response);
-    window.location.replace(`/quiz/${id}`);
-  }
-};
-
 const deleteQuiz = () => {
   console.log("delete");
 };
@@ -146,7 +125,6 @@ const generateQuiz = () => {
 };
 
 $("[name='delete-btn']").click(deleteQuiz);
-$(".title").click(viewQuiz);
 $("#quizSearch").submit(handleQuizSearch);
 $("#create-btn").click(createQuizBase);
 $("#generate-btn").click(generateQuiz);

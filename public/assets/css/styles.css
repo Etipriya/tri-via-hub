@@ -48,3 +48,24 @@ html {
   text-align: center;
   color: #0894ec;
 }
+
+.quiz-card {
+  width: 18rem;
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  /* background-color: #e9ecef; */
+  border-radius: 0.3rem;
+}
+
+.quiz-card-body {
+  min-height: 150px;
+}
+
+@media only screen and (max-width: 768px) {
+  .quiz-card {
+    width: 90%;
+  }
+}
