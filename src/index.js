@@ -12,6 +12,8 @@ const routes = require("./routes");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+// app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 const handlebarsOptions = {};
 const hbs = handlebars.create(handlebarsOptions);

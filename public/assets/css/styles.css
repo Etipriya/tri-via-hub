@@ -1,0 +1,50 @@
+body {
+  background: rgb(174, 225, 238);
+  background: radial-gradient(
+    circle,
+    rgba(174, 225, 238, 1) 0%,
+    rgba(148, 187, 233, 0.4500175070028011) 80%
+  );
+
+  margin: 0;
+  font-family: “Muli”, -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto,
+    “Helvetica Neue”, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”,
+    “Segoe UI Symbol”, “Noto Color Emoji”;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+.logo {
+  padding-top: 15px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  height: 70px;
+  width: auto;
+}
+
+.navbar .logo {
+  padding-top: 10px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: grey;
+}
+
+.categories {
+  text-align: center;
+  color: grey;
+  font-size: 2rem;
+}
+
+.card-title {
+  text-align: center;
+  color: #0894ec;
+}

@@ -12,7 +12,6 @@ const schema = {
   question: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
     validate: {
       len: [2, 50],
     },

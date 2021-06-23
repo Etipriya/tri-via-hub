@@ -1,5 +1,4 @@
-const { Op, json } = require("sequelize");
-const axios = require("axios");
+const { Op } = require("sequelize");
 const getApiQuestions = require("../../fetchers/open-trivia");
 
 const {
@@ -24,6 +23,7 @@ const renderDashboardPage = async (req, res) => {
           attributes: ["category_name"],
         },
       ],
+      order: [["createdAt", "DESC"]],
     });
     const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
     res.render("dashboard", { formattedQuizzes });
@@ -95,13 +95,23 @@ const renderQuizPageById = async (req, res) => {
     const questions = plainQuiz.questions.map((question) => {
       const { answers } = question;
 
-      const { option } = answers[0];
+      const newQuestion = question.question;
+
+      let { option } = answers[0];
+
+      option = option.replace(/&#039;/g, "'");
 
       const options = JSON.parse(option);
 
       const shuffledAnswers = shuffleArray(options);
 
+      const formattedQuestion = newQuestion
+        .replace(/&#039;/g, "'")
+        .replace(/&quot;/g, "'")
+        .replace(/&rsquo;/g, "'");
+
       question.answers = shuffledAnswers;
+      question.question = formattedQuestion;
 
       return question;
     });
@@ -155,16 +165,15 @@ const renderSearchedQuizzes = async (req, res) => {
 };
 const renderGenerateQuiz = async (req, res) => {
   try {
-    const { title, category, difficulty, type } = req.query;
+    const { title, category, difficulty } = req.query;
     const { userId } = req.session;
-    const params = { category, difficulty, type, amount: 10 };
+    const params = { category, difficulty, amount: 10, type: "multiple" };
     const apiQuestions = await getApiQuestions(params);
 
     const quiz = await Quiz.create({
       title,
       category_id: category,
       difficulty,
-      type,
       user_id: userId,
     });
 
