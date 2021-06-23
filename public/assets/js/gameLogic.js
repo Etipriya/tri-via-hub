@@ -1,6 +1,6 @@
 let score = 0;
 
-const isAnswer = async (event) => {
+const isAnswer = async event => {
   const button = $(event.target);
   const question = $(event.currentTarget);
 
@@ -45,10 +45,28 @@ const isAnswer = async (event) => {
   }
 };
 
+// Declaring timer
+const startTimer = () => {
+  let timerValue = 100;
+
+  const callback = () => {
+    // if timer is active and game is still active
+    $("#timer").text(timerValue);
+    console.log(timerValue);
+
+    if (timerValue > 0) {
+      timerValue = timerValue - 1;
+    }
+
+    if (timerValue === 0) {
+      clearInterval(timer);
+    }
+  };
+  const timer = setInterval(callback, 1000);
+};
+
 const startQuiz = () => {
-  setInterval(() => {
-    console.log("hello");
-  }, 1000);
+  startTimer();
 };
 
 $(".question").click(isAnswer);
