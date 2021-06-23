@@ -5,14 +5,13 @@ let newCreatedQuiz = {};
 //Declared Create quiz
 const createQuiz = async (req, res) => {
   try {
-    const { title, category_id, difficulty, type } = req.body;
+    const { title, category_id, difficulty } = req.body;
     const { userId } = req.session;
 
     const newQuiz = await Quiz.create({
       title,
       category_id,
       difficulty,
-      type,
       user_id: userId,
     });
 

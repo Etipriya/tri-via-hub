@@ -33,14 +33,6 @@ const schema = {
       len: [2, 50],
     },
   },
-  type: {
-    type: DataTypes.STRING,
-    allowNull: false,
-
-    validate: {
-      len: [2, 50],
-    },
-  },
   user_id: {
     type: DataTypes.INTEGER,
     allowNull: false,

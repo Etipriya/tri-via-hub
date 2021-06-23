@@ -29,7 +29,6 @@ const createQuizBase = async (event) => {
   const title = $("#quiz-title").val();
   const category_id = $("#category-select").val();
   const difficulty = $("#difficulty-select").val();
-  const type = $("#type-select").val();
 
   const options = {
     method: "POST",
@@ -41,7 +40,6 @@ const createQuizBase = async (event) => {
       title,
       category_id,
       difficulty,
-      type,
     }),
   };
 
@@ -128,7 +126,7 @@ const viewQuiz = async (event) => {
   if (response.status !== 200) {
     console.log("Failed to get quiz");
   } else {
-    console.log(response)
+    console.log(response);
     window.location.replace(`/quiz/${id}`);
   }
 };
