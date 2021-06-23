@@ -7,9 +7,11 @@ const checkAnswer = async (req, res) => {
     const question = await Question.findByPk(id);
 
     if (givenAnswer === question.correct_option) {
-      res.status(200).json({ success: "That was correct!" });
+      console.log("success");
+      return res.status(200).json({ success: "That was correct!" });
     } else {
-      res.status(200).json({ error: "That answer was incorrect!" });
+      console.log("fail");
+      return res.status(200).json({ error: "That answer was incorrect!" });
     }
   } catch (err) {
     console.error(err);

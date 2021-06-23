@@ -81,7 +81,6 @@ const renderQuizPageById = async (req, res) => {
         { model: Category, attributes: ["category_name"] },
         {
           model: Question,
-          attributes: ["question", "correct_option"],
           include: { model: Answer },
         },
         { model: Score, include: { model: User, attributes: ["username"] } },

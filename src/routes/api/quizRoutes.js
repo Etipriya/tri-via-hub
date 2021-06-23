@@ -25,6 +25,6 @@ router.get("/", getAllQuizzes);
 router.post("/create/question", createQuestion);
 router.post("/create/question/answer", createAnswer);
 
-router.post("/checkanswer", checkAnswer);
+router.post("/check-answer", checkAnswer);
 
 module.exports = router;
