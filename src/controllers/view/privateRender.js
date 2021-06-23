@@ -1,5 +1,4 @@
-const { Op, json } = require("sequelize");
-const axios = require("axios");
+const { Op } = require("sequelize");
 const getApiQuestions = require("../../fetchers/open-trivia");
 
 const {
