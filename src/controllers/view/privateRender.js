@@ -26,7 +26,10 @@ const renderDashboardPage = async (req, res) => {
       order: [["createdAt", "DESC"]],
     });
     const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
-    res.render("dashboard", { formattedQuizzes });
+    res.render("dashboard", {
+      formattedQuizzes,
+      username: req.session.username,
+    });
   } catch (error) {
     console.log(error, "Not working");
   }

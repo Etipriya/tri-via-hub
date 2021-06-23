@@ -1,6 +1,8 @@
 {{> private-navbar}} 
-<h1>dashboard</h1>
-  <a href="/quiz/create">Create your Quiz!</a>
+<div class="jumbotron m-3 text-center">
+  <h1>Welcome {{username}}</h1>
+  <a class="btn btn-outline-success mt-4" href="/quiz/create">Create your Quiz!</a>
+</div>
 <div class="d-flex flex-wrap justify-content-evenly m-5">
   {{#each formattedQuizzes as |quiz| }}
   {{> quiz-dashboard-card}}

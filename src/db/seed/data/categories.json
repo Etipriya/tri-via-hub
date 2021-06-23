@@ -4,31 +4,31 @@
     "api_id": "9"
   },
   {
-    "category_name": "Entertainment: Books",
+    "category_name": "Books",
     "api_id": "10"
   },
   {
-    "category_name": "Entertainment: Film",
+    "category_name": "Film",
     "api_id": "11"
   },
   {
-    "category_name": "Entertainment: Music",
+    "category_name": "Music",
     "api_id": "12"
   },
   {
-    "category_name": "Entertainment: Musicals & Theatres",
+    "category_name": "Musicals & Theatres",
     "api_id": "13"
   },
   {
-    "category_name": "Entertainment: Television",
+    "category_name": "Television",
     "api_id": "14"
   },
   {
-    "category_name": "Entertainment: Video Games",
+    "category_name": "Video Games",
     "api_id": "15"
   },
   {
-    "category_name": "Entertainment: Board Games",
+    "category_name": "Board Games",
     "api_id": "16"
   },
   {
@@ -36,11 +36,11 @@
     "api_id": "17"
   },
   {
-    "category_name": "Science: Computers",
+    "category_name": "Computers",
     "api_id": "18"
   },
   {
-    "category_name": "Science: Mathematics",
+    "category_name": "Mathematics",
     "api_id": "19"
   },
   {
@@ -80,19 +80,19 @@
     "api_id": "28"
   },
   {
-    "category_name": "Entertainment: Comics",
+    "category_name": "Comics",
     "api_id": "29"
   },
   {
-    "category_name": "Science: Gadgets",
+    "category_name": "Gadgets",
     "api_id": "30"
   },
   {
-    "category_name": "Entertainment: Japanese Anime & Manga",
+    "category_name": "Japanese Anime & Manga",
     "api_id": "31"
   },
   {
-    "category_name": "Entertainment: Cartoon & Animations",
+    "category_name": "Cartoon & Animations",
     "api_id": "32"
   }
 ]
