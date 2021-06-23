@@ -157,7 +157,7 @@ const renderGenerateQuiz = async (req, res) => {
   try {
     const { title, category, difficulty } = req.query;
     const { userId } = req.session;
-    const params = { category, difficulty, type: "multiple", amount: 10 };
+    const params = { category, difficulty, amount: 10, type: "multiple" };
     const apiQuestions = await getApiQuestions(params);
 
     const quiz = await Quiz.create({
