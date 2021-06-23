@@ -2,11 +2,14 @@
 
 <div class="card m-3 p-3 view-quiz" style="width: 18rem" id="{{id}}">
   {{#each questions as |question|}}
-    <div>{{question.question}}</div>
+    <div class="question">
+      <div >{{question.question}}</div>
     <ul>
       {{#each question.answers as |answer|}}
-        <li>{{answer}}</li>
+        <button class="btn btn-success answer-btn" data-answer=`{{answer}}`>{{answer}}</button>
       {{/each}}
     </ul>
+    </div>
   {{/each}}
 </div>
+
