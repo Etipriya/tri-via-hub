@@ -24,6 +24,7 @@ const renderDashboardPage = async (req, res) => {
           attributes: ["category_name"],
         },
       ],
+      order: [["createdAt", "DESC"]],
     });
     const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
     res.render("dashboard", { formattedQuizzes });
