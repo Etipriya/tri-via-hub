@@ -84,7 +84,6 @@ const renderQuizPageById = async (req, res) => {
         { model: Category, attributes: ["category_name"] },
         {
           model: Question,
-          attributes: ["question", "correct_option"],
           include: { model: Answer },
         },
         { model: Score, include: { model: User, attributes: ["username"] } },
@@ -111,7 +110,8 @@ const renderQuizPageById = async (req, res) => {
       const formattedQuestion = newQuestion
         .replace(/&#039;/g, "'")
         .replace(/&quot;/g, "'")
-        .replace(/&rsquo;/g, "'");
+        .replace(/&rsquo;/g, "'")
+        .replace(/&amp;/g, "&");
 
       question.answers = shuffledAnswers;
       question.question = formattedQuestion;
@@ -126,7 +126,7 @@ const renderQuizPageById = async (req, res) => {
 
     console.log("x", JSON.stringify(x, null, 2));
 
-    res.render("individual-quiz", x);
+    res.render("individual-quiz", { layout: "quiz", ...x });
   } catch (error) {
     console.log(error.message);
   }

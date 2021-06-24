@@ -9,17 +9,10 @@ const schema = {
     primaryKey: true,
     autoIncrement: true,
   },
-
   score: {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-
-  date_time: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
-
   user_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -28,7 +21,6 @@ const schema = {
       key: "id",
     },
   },
-
   quiz_id: {
     type: DataTypes.INTEGER,
     allowNull: false,

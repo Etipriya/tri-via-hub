@@ -10,6 +10,7 @@ const {
   createQuiz,
   createQuestion,
   createAnswer,
+  saveScore,
 } = require("../../controllers/api/postQuiz");
 
 const { checkAnswer } = require("../../controllers/api/quizLogic");
@@ -25,6 +26,8 @@ router.get("/", getAllQuizzes);
 router.post("/create/question", createQuestion);
 router.post("/create/question/answer", createAnswer);
 
-router.post("/checkanswer", checkAnswer);
+router.post("/check-answer", checkAnswer);
+
+router.post("/:id/score", saveScore);
 
 module.exports = router;

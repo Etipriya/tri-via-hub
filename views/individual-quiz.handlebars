@@ -1,12 +1,17 @@
 {{> private-navbar}} 
 
-<div class="card m-3 p-3 view-quiz" style="width: 18rem" id="{{id}}">
+<div class="text-center">Timer:<span id="timer"></span></div>
+
+<div class="card m-3 p-3 view-quiz w-50 text-center mx-auto" id="{{id}}">
   {{#each questions as |question|}}
-    <div>{{question.question}}</div>
-    <ul>
-      {{#each question.answers as |answer|}}
-        <li>{{answer}}</li>
-      {{/each}}
-    </ul>
+    <div class="question mt-3 my-4" id={{question.id}}>
+      <div class="quizQuestion">{{question.question}}</div>
+      <ul class="list-group mt-3">
+        {{#each question.answers as |answer|}}
+          <li class="list-group-item " data-answer="{{answer}}">{{answer}}</li>
+        {{/each}}
+      </ul>
+    </div>
   {{/each}}
 </div>
+
