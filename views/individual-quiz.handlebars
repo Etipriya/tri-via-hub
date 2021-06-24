@@ -1,6 +1,6 @@
 {{> private-navbar}} 
 
-<div class="text-center">Timer:<span id="timer"></span></div>
+<div class="text-center mt-4">Timer:<span id="timer"></span></div>
 
 <div class="card m-3 p-3 view-quiz w-50 text-center mx-auto" id="{{id}}">
   {{#each questions as |question|}}
@@ -13,5 +13,9 @@
       </ul>
     </div>
   {{/each}}
+</div>
+
+<div class="text-center my-4">
+  <button type="button" name="finish-btn" class="btn btn-success">Finish</button>
 </div>
 

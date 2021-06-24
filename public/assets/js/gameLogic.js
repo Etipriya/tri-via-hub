@@ -52,8 +52,6 @@ const isAnswer = async (event) => {
 const sendScore = async () => {
   const quizId = $(".view-quiz").attr("id");
 
-  console.log(quizId);
-
   const options = {
     method: "POST",
     headers: {
@@ -68,9 +66,10 @@ const sendScore = async () => {
 
   const response = await fetch(`/api/quiz/${quizId}/score`, options);
 
+  timerValue = 0;
+
   if (response.status !== 201) {
     console.log("Failed to save score");
-    // to do error handling
   } else {
     console.log("score saved");
   }
@@ -101,3 +100,4 @@ const startQuiz = () => {
 
 $(".question").click(isAnswer);
 $(document).ready(startQuiz);
+$("[name='finish-btn']").click(sendScore);

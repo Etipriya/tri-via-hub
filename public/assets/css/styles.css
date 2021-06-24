@@ -49,6 +49,11 @@ html {
   color: #0894ec;
 }
 
+.card-left {
+  border: 1px solid black;
+  flex-basis: 45%;
+}
+
 .quiz-card {
   width: 18rem;
 }
