@@ -13,7 +13,7 @@ const {
 const renderDashboardPage = async (req, res) => {
   try {
     const { userId } = req.session;
-    const quizzes = await Quiz.findAll({
+    const createdQuizzes = await Quiz.findAll({
       where: {
         user_id: userId,
       },
@@ -25,9 +25,35 @@ const renderDashboardPage = async (req, res) => {
       ],
       order: [["createdAt", "DESC"]],
     });
-    const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
+    const formattedCreatedQuizzes = createdQuizzes.map((quiz) =>
+      quiz.get({ plain: true })
+    );
+
+    const playedQuizzes = await Score.findAll({
+      where: {
+        user_id: userId,
+      },
+      include: [
+        {
+          model: Quiz,
+          attributes: ["title", "difficulty"],
+          include: [
+            {
+              model: Category,
+            },
+          ],
+        },
+      ],
+      order: [["createdAt", "DESC"]],
+    });
+
+    const formattedPlayedQuizzes = playedQuizzes
+      .map((quiz) => quiz.get({ plain: true }))
+      .slice(0, 6);
+
     res.render("dashboard", {
-      formattedQuizzes,
+      formattedCreatedQuizzes,
+      formattedPlayedQuizzes,
       username: req.session.username,
     });
   } catch (error) {
