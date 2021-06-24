@@ -110,7 +110,8 @@ const renderQuizPageById = async (req, res) => {
       const formattedQuestion = newQuestion
         .replace(/&#039;/g, "'")
         .replace(/&quot;/g, "'")
-        .replace(/&rsquo;/g, "'");
+        .replace(/&rsquo;/g, "'")
+        .replace(/&amp;/g, "&");
 
       question.answers = shuffledAnswers;
       question.question = formattedQuestion;

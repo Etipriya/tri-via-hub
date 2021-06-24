@@ -1,5 +1,5 @@
 let score = 0;
-let timerValue = 10;
+let timerValue = $(".quizQuestion").length * 10;
 
 const isAnswer = async (event) => {
   const button = $(event.target);
