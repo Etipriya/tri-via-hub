@@ -33,7 +33,7 @@ const isAnswer = async (event) => {
           Correct
         </div>`
       );
-      score += 1;
+      score += 3;
     } else {
       question.find("ul").replaceWith(
         `<div class="alert alert-danger" role="alert">
@@ -42,7 +42,10 @@ const isAnswer = async (event) => {
       );
       score -= 1;
     }
-    console.log(score);
+  }
+
+  if (score < 0) {
+    score = 0;
   }
 };
 
