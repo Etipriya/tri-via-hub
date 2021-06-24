@@ -1,6 +1,7 @@
 let score = 0;
+let timerValue = 10;
 
-const isAnswer = async event => {
+const isAnswer = async (event) => {
   const button = $(event.target);
   const question = $(event.currentTarget);
 
@@ -45,10 +46,35 @@ const isAnswer = async event => {
   }
 };
 
+const sendScore = async () => {
+  const quizId = $(".view-quiz").attr("id");
+
+  console.log(quizId);
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    body: JSON.stringify({
+      score,
+      quiz_id: quizId,
+    }),
+  };
+
+  const response = await fetch(`/api/quiz/${quizId}/score`, options);
+
+  if (response.status !== 201) {
+    console.log("Failed to save score");
+    // to do error handling
+  } else {
+    console.log("score saved");
+  }
+};
+
 // Declaring timer
 const startTimer = () => {
-  let timerValue = 100;
-
   const callback = () => {
     // if timer is active and game is still active
     $("#timer").text(timerValue);
@@ -60,6 +86,7 @@ const startTimer = () => {
 
     if (timerValue === 0) {
       clearInterval(timer);
+      sendScore();
     }
   };
   const timer = setInterval(callback, 1000);

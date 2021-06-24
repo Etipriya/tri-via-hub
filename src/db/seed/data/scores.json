@@ -1,37 +1,31 @@
 [
   {
     "score": "60",
-    "date_time": "2020-12-31 23:59:59",
     "user_id": "1",
     "quiz_id": "1"
   },
   {
     "score": "90",
-    "date_time": "2020-10-03 22:50:59",
     "user_id": "2",
     "quiz_id": "3"
   },
   {
     "score": "50",
-    "date_time": "2020-11-31 21:59:59",
     "user_id": "1",
     "quiz_id": "3"
   },
   {
     "score": "70",
-    "date_time": "2020-09-30 20:15:59",
     "user_id": "2",
     "quiz_id": "2"
   },
   {
     "score": "100",
-    "date_time": "2020-10-11 14:25:59",
     "user_id": "2",
     "quiz_id": "1"
   },
   {
     "score": "60",
-    "date_time": "2020-09-10 23:59:59",
     "user_id": "1",
     "quiz_id": "1"
   }

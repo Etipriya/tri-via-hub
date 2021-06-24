@@ -1,4 +1,4 @@
-const { Quiz, Question, Answer } = require("../../models");
+const { Quiz, Question, Answer, Score } = require("../../models");
 
 let newCreatedQuiz = {};
 
@@ -62,4 +62,22 @@ const createAnswer = async (req, res) => {
   }
 };
 
-module.exports = { createQuiz, createQuestion, createAnswer };
+const saveScore = async (req, res) => {
+  try {
+    const { score, quiz_id } = req.body;
+    const { userId } = req.session;
+
+    const newScore = await Score.create({
+      score,
+      user_id: userId,
+      quiz_id,
+    });
+
+    return res.status(201).json(newScore);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: "Failed to create score" });
+  }
+};
+
+module.exports = { createQuiz, createQuestion, createAnswer, saveScore };
