@@ -95,7 +95,6 @@ const startTimer = () => {
     if (timerValue === 0) {
       console.log("here");
       clearInterval(timer);
-      // sendScore();
       $("#quiz-modal").modal("show");
     }
   };
