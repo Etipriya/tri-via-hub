@@ -1,3 +1,19 @@
+const showToast = () => {
+  const toastOptions = {
+    animation: true,
+    delay: 2000,
+  };
+
+  var toastElList = [].slice.call(document.querySelectorAll(".toast"));
+  var toastList = toastElList.map(function (toastEl) {
+    return new bootstrap.Toast(toastEl, toastOptions);
+  });
+
+  for (var i = 0; i < toastList.length; i++) {
+    toastList[i].show();
+  }
+};
+
 const handleQuizSearch = async (event) => {
   event.preventDefault();
 
@@ -96,6 +112,8 @@ const createQuizQuestion = async (event) => {
     "/api/quiz/create/question/answer",
     answersOptions
   );
+
+  showToast();
 
   if (response.status !== 201) {
     console.log("Failed to create quiz!");
