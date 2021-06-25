@@ -4,7 +4,7 @@ You wanna play something interesting? Visit Tri-via-hub website and you could en
 
 ## Deployed Github Page
 
-Click [Github] to view project on GitHub pages.
+Click [Heroku](https://powerful-journey-42110.herokuapp.com/) to view project.
 
 **Contributors**
 
@@ -22,7 +22,7 @@ Eti Priya: [Github](https://github.com/Etipriya)
 
 ## How do I use Tri-via-hub?
 
-A user should be able to visit the site and on the homepage they will be presented with some quiz categories (with images). Once they click on a category it will take you to the page for that category where you can view the quizzes for that category.
+A user should be able to visit the site and on the homepage they will be presented with some quiz categories (with images). Once they click on a category it will take them to the page for that category where they can view the quizzes for that category.
 
 If the user isn't logged in, the navbar on the homepage should have links for Home,Login, and Sign Up.
 
@@ -33,7 +33,7 @@ Once they click on any Quiz, it will redirect them to log in.
 If the user is logged in, the navbar will also have
 
 - A Dashboard to view their personal profile
-- Quizzes page to move the quizzes page
+- Quizzes - to move upto the quizzes page
 - Instead of Sign Up/Log in, it will have a log out.
 
 The Dashboard will have a list of quizzes that the user has completed or added to their list and they will be able see their scores for the quizzes or delete the quizzes they have created.
@@ -53,16 +53,18 @@ Once the user has completed the quiz, they will see their score on the dashboard
 
 ![image](./public/assets/images/quizzes.png)
 
-![image](./images/delete_tags1.png) - questions page
+![image](./public/assets/images/questions-page.png)
 
-The create a quiz page has the title, category and difficulty. If the user needs inspiration they can randomly generate some questions using the API by clicking on "Generate Questions". Else, user could click on "Create questions".
+![image](./public/assets/images/finished-quiz.png)
+
+The "create a quiz page" has the title, category and difficulty.If the user needs to generate some questions using the API, they could click on "Generate Questions". Else, they could click on "Create questions".
 
 ![image](./public/assets/images/create-quiz.png)
 
 ## Technology/Framework used
 
 - Workbench
-- Postman for testing
+- Postman
 - Bootstrap
 - JQuery
 - API - open Trivia DB
@@ -71,43 +73,41 @@ The create a quiz page has the title, category and difficulty. If the user needs
 
 - Tri-via-hub helps to increase the knowledge of any age group.
 - It helps in development of brain as it has quizzes related to any age group.
-- Just sign-up and login and you could view multiple quizzes related to nature, science and geography etc.
-- This is a fast and reliable website.
-- It is easily accessible and secure.
+- Just sign-up and login and you could view multiple quizzes related to nature, science and geography etc. so it's easily accessible.
 
 ## Project Documentation
 
-Tri-via-hub is an interesting and involving website. It brings people together by increasing the knowledge towards various fields. It gives an exposure to every individual and of any age.
+- Tri-via-hub is an interesting and involving website.
+- It brings people together by increasing the knowledge towards various fields.
+- It gives an exposure to every individual and of any age.
 
 ## Objectives
 
-Interesting quizzes with timer and score.
-Allow user to save their favourite quizzes for future.
-Enhance user experience by multiple question in quizzes.
+- Interesting quizzes with timer and score.
+- Allow user to save their quizzes for future.
+- Enhance user experience by multiple question in quizzes.
 
 ## Getting started
 
-We started the project with the following steps:
+We started with the project with the following steps:
 
-- We created a mockup image about the requirements.
-  -\*\* We started with Node coding and also using HTML and CSS in the end and also attaching the API's with the code.
-- We checked the result at every moment with console.log.
-- We verified the result and then completed the task.
+- npm run i
+- npm run seed
+- npm run start/ npm run dev
 
 ## Project Charter
 
 Tri-via-hub is an interesting and involving website. It brings people together by increasing the knowledge towards various fields. It gives an exposure to every individual and of any age.
 
-Key requirement - tasks, roles and responsibilities were allotted at the starting of the project.
+**Key requirement** - tasks, roles and responsibilities were allotted at the starting of the project.
 
-\*\*We used:
+**We used:**
 
-Wire frames - Mock flow
-Mock ups - Adobe CS
-Frontend - HTML, CSS, JavaScript, Zurb Foundation, Fontawesome
-Backend - Jquery, Foursquare API, Google places API, local storage
+Wire frames - Draw IO
+Frontend - HTML, CSS, JavaScript
+Backend - Jquery
 
-## User Journeys
+## User Journey
 
 **Make a search** - User could use this website easily on his mobile, tablet or computer and play a quiz according to their interest.
 
@@ -119,16 +119,11 @@ Backend - Jquery, Foursquare API, Google places API, local storage
 
 ## Project Retrospective
 
-Tri-via-hub is a wonderful platform which helps people learn more.
-It is an interactive app which increases the knowledge and creates interest in various fields.
-It depends on the interests and various activities which everyone used to do.
+- Tri-via-hub is a wonderful platform which helps people learn more.
+- It is an interactive app which increases the knowledge and creates interest in various fields.
+- It depends on the interests and various activities which everyone used to do.-
 
-**Learning**
-
-It helped us understand the usage of various API's, Workbench and Postman.
-It also helped us understand the JS coding by using JQuery.
-
-**Improvements to be made**
+## Improvements to be made
 
 This project could be improved by adding
 
@@ -140,34 +135,25 @@ This project could be improved by adding
 
 We learned about various things:
 
-Related to API - We looked into influence of an API on the project.
-Stringify the answers in database as they were stored in an array.
-Some features had to be cut due to time frame.
+- Related to API - We looked into influence of an API on the project.
+- Stringify the answers in database as they were stored in an array.
+- Some features had to be cut due to time frame.
 
 **Timeline**
 Every task was given a limited time and whole team has been into the project. So, everyone completed the task and helped each other in a great manner.
 
-**For each task**
+## Results
 
-Mock up Design – 60 minutes
-HTML/CSS - 45 minutes to 1 hour
-JS/JQuery - 5 days
-API implementation – 1 day
-Project documentation - 1day
-Full project - 90 hours
+**Objectives were achieved as below:**
 
-**Results**
+- Our website instantly grabs user towards various quizzes related to various streams.
 
-Objectives were achieved as below:
+- It adds the cards to dashboard page after completing the quiz.
 
-Our website instantly grabs user towards various quizzes related to various steams.
+- It removes a quiz easily from dashboard page by clicking on "Delete" button easily.
 
-It adds the cards to dashboard page after completing the quiz.
+- It shows created quiz and played quizzes on the same page.
 
-It removes a quiz easily from dashboard page by clicking on "Delete" button easily.
+- It easily comes back to the home page.
 
-It shows created quiz and played quizzes on the same page.
-
-It easily comes back to the home page.
-
-It easily allows to sign up and logout.
+- It easily allows to sign up and logout.
