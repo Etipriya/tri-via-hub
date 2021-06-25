@@ -108,6 +108,7 @@ const startQuiz = () => {
 
 const showModal = () => {
   $("#quiz-modal").modal("show");
+  timerValue = "Done";
 };
 
 $(".question").click(isAnswer);

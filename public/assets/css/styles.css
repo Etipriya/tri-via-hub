@@ -38,6 +38,11 @@ html {
   -webkit-tap-highlight-color: grey;
 }
 
+.card-img-top {
+  width: 286px;
+  height: 429px;
+}
+
 .quiz-card {
   border-radius: 10px;
   box-shadow: 5px, 5px, 15px #bcd1df;
