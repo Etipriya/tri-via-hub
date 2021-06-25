@@ -8,7 +8,7 @@
   },
   "scripts": {
     "seed": "node src/db/seed/seed.js",
-    "start": "node src/index.js",
+    "start": "node src/db/seed/seed.js && node src/index.js",
     "dev": "nodemon src/index.js"
   },
   "repository": {
