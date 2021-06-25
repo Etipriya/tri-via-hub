@@ -19,24 +19,13 @@ const handleQuizSearch = async (event) => {
 
   const searchQuery = $("#searchQuery").val();
 
-  const options = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    redirect: "follow",
-    query: JSON.stringify({
-      title: searchQuery,
-    }),
-  };
+  window.location.replace(`/quiz/search?title=${searchQuery}`);
+};
 
-  const response = await fetch("/api/quiz/search", options);
+const searchCategories = async (event) => {
+  const category_id = $(event.target).parent().attr("id");
 
-  if (response.status !== 200) {
-    console.log("Failed to search!");
-  } else {
-    window.location.replace(`/quiz/search?title=${searchQuery}`);
-  }
+  window.location.replace(`/quiz/search?category_id=${category_id}`);
 };
 
 const createQuizBase = async (event) => {
@@ -166,4 +155,5 @@ $("#questionForm").submit(createQuizQuestion);
 $("#doneCreate").click(finishCreateQuiz);
 $("[name='delete-btn']").click(deleteQuiz);
 $("#quizSearch").submit(handleQuizSearch);
+$("#categories-container").click(searchCategories);
 $("#generate-btn").click(generateQuiz);
