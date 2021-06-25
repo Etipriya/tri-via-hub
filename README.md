@@ -141,8 +141,8 @@ This project could be improved by adding
 We learned about various things:
 
 Related to API - We looked into influence of an API on the project.
-Connecting to the API and getting the data from the API.
-Connecting the questions and answers table on workbench.
+Stringify the answers in database as they were stored in an array.
+Some features had to be cut due to time frame.
 
 **Timeline**
 Every task was given a limited time and whole team has been into the project. So, everyone completed the task and helped each other in a great manner.
@@ -170,4 +170,4 @@ It shows created quiz and played quizzes on the same page.
 
 It easily comes back to the home page.
 
-It easily allows t sign up and logout.
+It easily allows to sign up and logout.
