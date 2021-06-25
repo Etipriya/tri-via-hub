@@ -1,6 +1,6 @@
 {{> private-navbar}} 
 
-<div class="text-center mt-4">Timer:<span id="timer"></span></div>
+<div class="mt-4 position-fixed timerContainer"><i class='fas fa-stopwatch' style='font-size:2rem;'></i><span id="timer" style='font-size:2rem;'></span></div>
 
 <div class="card m-3 p-3 view-quiz w-50 text-center mx-auto" id="{{id}}">
   {{#each questions as |question|}}
@@ -23,7 +23,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Congratulation!</h5>
+        <h5 class="modal-title">Congratulations!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

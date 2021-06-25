@@ -1,3 +1,19 @@
+const showToast = () => {
+  const toastOptions = {
+    animation: true,
+    delay: 2000,
+  };
+
+  var toastElList = [].slice.call(document.querySelectorAll(".toast"));
+  var toastList = toastElList.map(function (toastEl) {
+    return new bootstrap.Toast(toastEl, toastOptions);
+  });
+
+  for (var i = 0; i < toastList.length; i++) {
+    toastList[i].show();
+  }
+};
+
 const handleQuizSearch = async (event) => {
   event.preventDefault();
 
@@ -97,6 +113,8 @@ const createQuizQuestion = async (event) => {
     answersOptions
   );
 
+  showToast();
+
   if (response.status !== 201) {
     console.log("Failed to create quiz!");
   } else {
@@ -110,8 +128,27 @@ const finishCreateQuiz = (event) => {
   window.location.replace(`/quiz`);
 };
 
-const deleteQuiz = () => {
-  console.log("delete");
+const deleteQuiz = async (event) => {
+  const id = event.currentTarget.id;
+
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    body: JSON.stringify({
+      id,
+    }),
+  };
+
+  const response = await fetch(`/api/quiz/${id}`, options);
+
+  if (response.status !== 200) {
+    console.log("FAILED TO UPDATE POST");
+  } else {
+    window.location.replace("/dashboard");
+  }
 };
 
 const generateQuiz = () => {
@@ -124,9 +161,9 @@ const generateQuiz = () => {
   );
 };
 
-$("[name='delete-btn']").click(deleteQuiz);
-$("#quizSearch").submit(handleQuizSearch);
 $("#create-btn").click(createQuizBase);
-$("#generate-btn").click(generateQuiz);
 $("#questionForm").submit(createQuizQuestion);
 $("#doneCreate").click(finishCreateQuiz);
+$("[name='delete-btn']").click(deleteQuiz);
+$("#quizSearch").submit(handleQuizSearch);
+$("#generate-btn").click(generateQuiz);

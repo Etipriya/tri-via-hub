@@ -20,18 +20,22 @@ User.hasMany(Favourite, {
 
 Quiz.hasMany(Score, {
   foreignKey: "quiz_id",
+  onDelete: "CASCADE",
 });
 
 Quiz.hasMany(Question, {
   foreignKey: "quiz_id",
+  onDelete: "CASCADE",
 });
 
 Quiz.hasMany(Favourite, {
   foreignKey: "fav_quiz_id",
+  onDelete: "CASCADE",
 });
 
 Question.hasMany(Answer, {
   foreignKey: "question_id",
+  onDelete: "CASCADE",
 });
 
 Category.hasMany(Quiz, {

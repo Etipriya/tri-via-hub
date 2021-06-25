@@ -28,7 +28,6 @@ const schema = {
   difficulty: {
     type: DataTypes.STRING,
     allowNull: false,
-
     validate: {
       len: [2, 50],
     },
