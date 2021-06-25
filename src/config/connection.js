@@ -6,9 +6,9 @@ const dbOptions = {
   port: "3306",
   logging: false,
 };
-const dbName = "tri_via_hub";
-const dbUser = "root";
-const dbPassword = "password";
+const dbName = process.env.DB_NAME;
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PW;
 let connection;
 if (process.env.JAWSDB_URL) {
   // connection for heroku
