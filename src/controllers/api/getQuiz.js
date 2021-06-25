@@ -59,10 +59,10 @@ const getQuizById = async (req, res) => {
         { model: Score, include: { model: User, attributes: ["username"] } },
       ],
     });
-  
+
     const formattedQuiz = quiz.get({ plain: true });
 
-    console.log("formattedQuiz", formattedQuiz)
+    console.log("formattedQuiz", formattedQuiz);
 
     res.status(200).json(formattedQuiz);
   } catch (err) {
@@ -116,26 +116,6 @@ const getQuizByTitle = async (req, res) => {
     console.error(err);
   }
 };
-
-// const getQuizByCategory = async () => {
-//   try {
-//     await connection.sync();
-
-//     const category = "Entertainment: Video Games";
-
-//     const quizzes = await Quiz.findAll({
-//       where: {
-//         category,
-//       },
-//     });
-
-//     const formattedQuizzes = quizzes.map((quiz) => quiz.get({ plain: true }));
-
-//     console.log(formattedQuizzes);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
 
 module.exports = {
   getAllQuizzes,

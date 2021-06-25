@@ -127,7 +127,7 @@ const renderQuizPageById = async (req, res) => {
 
       let { option } = answers[0];
 
-      option = option.replace(/&#039;/g, "'");
+      option = option.replace(/&#039;/g, "'").replace(/&Eacute;/g, "é");
 
       const options = JSON.parse(option);
 
@@ -192,6 +192,7 @@ const renderSearchedQuizzes = async (req, res) => {
     console.error(err);
   }
 };
+
 const renderGenerateQuiz = async (req, res) => {
   try {
     const { title, category, difficulty } = req.query;
