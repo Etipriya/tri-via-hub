@@ -38,18 +38,18 @@ html {
   -webkit-tap-highlight-color: grey;
 }
 
-.card {
-  border-radius: 5px;
+.quiz-card {
+  border-radius: 10px;
   box-shadow: 5px, 5px, 15px #bcd1df;
   transition: all 0.3s ease-in;
   -webkit-transition: all 0.3s ease-in;
   -moz-transition: all 0.3s ease-in;
 }
 
-.card:hover {
+.quiz-card:hover {
   background: #bcd1df;
   color: white;
-  border-radius: 5px;
+  border-radius: 15px;
   border: none;
   box-shadow: 5px 5px 10px #9e9e9e;
 }
@@ -83,6 +83,11 @@ html {
 
 .quiz-card-body {
   min-height: 150px;
+}
+
+.timerContainer {
+  right: 20%;
+  /* transform: translate(-50%, -50%); */
 }
 
 @media only screen and (max-width: 768px) {
